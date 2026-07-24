@@ -1,0 +1,347 @@
+/* ==========================================
+   1. VARIABLES Y RESET BÁSICO
+   ========================================== */
+:root {
+    --ieee-blue: #00629B;
+    --ieee-dark-blue: #002855;
+    --ieee-sky-blue: #00A3E0;
+    --ieee-light-bg: #F4F6F9;
+    --text-color: #333333;
+    --white: #FFFFFF;
+    --accent-green: #2E7D32;
+    --border-color: #E0E0E0;
+    --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--ieee-light-bg);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ==========================================
+   2. MENÚ LATERAL (SIDEBAR NAVIGATION)
+   ========================================== */
+aside {
+    width: 280px;
+    background-color: var(--ieee-dark-blue);
+    color: var(--white);
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding: 24px 20px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid var(--ieee-blue);
+    text-align: center;
+}
+
+.sidebar-header h2 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: var(--white);
+    margin-top: 8px;
+}
+
+.sidebar-header .badge {
+    background-color: var(--ieee-sky-blue);
+    color: var(--ieee-dark-blue);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    padding: 15px 0;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: #CFD8DC;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+nav ul li a i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+    color: var(--white);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-left-color: var(--ieee-sky-blue);
+}
+
+/* ==========================================
+   3. ÁREA PRINCIPAL Y HERO HEADER
+   ========================================== */
+main {
+    margin-left: 280px;
+    flex: 1;
+    padding: 40px;
+    max-width: 1200px;
+}
+
+header.hero {
+    background: linear-gradient(135deg, var(--ieee-dark-blue) 0%, var(--ieee-blue) 100%);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+header.hero h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+header.hero p {
+    font-size: 1.1rem;
+    color: #E0F2FE;
+    max-width: 800px;
+}
+
+/* ==========================================
+   4. TARJETAS Y SECCIONES
+   ========================================== */
+.section-card {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--ieee-blue);
+}
+
+.section-title {
+    font-family: 'Roboto Slab', serif;
+    color: var(--ieee-dark-blue);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--ieee-light-bg);
+    padding-bottom: 10px;
+}
+
+.section-title i {
+    color: var(--ieee-blue);
+    margin-right: 12px;
+}
+
+/* Grillas flexibles */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjetas informativas internas */
+.info-card {
+    background-color: #F8FAFC;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--ieee-sky-blue);
+}
+
+.info-card h4 {
+    color: var(--ieee-blue);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.info-card h4 i {
+    margin-right: 8px;
+}
+
+/* ==========================================
+   5. ACORDEONES (ESTRUCTURA DE CAPÍTULOS)
+   ========================================== */
+.accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #F8FAFC;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--ieee-dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.accordion-header:hover {
+    background-color: #E0F2FE;
+}
+
+.accordion-content {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: var(--white);
+}
+
+.accordion-item.active .accordion-content {
+    padding: 15px 20px;
+    max-height: 300px;
+}
+
+.accordion-item.active .accordion-header {
+    background-color: #E0F2FE;
+    color: var(--ieee-blue);
+}
+
+/* ==========================================
+   6. CHECKLIST INTERACTIVA Y BARRA DE PROGRESO
+   ========================================== */
+.checklist-box {
+    background: #F0FDF4;
+    border: 1px solid #BBF7D0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.checklist-item input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    accent-color: var(--ieee-blue);
+    cursor: pointer;
+}
+
+.checklist-item span {
+    font-size: 0.95rem;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #E2E8F0;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-green);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* ==========================================
+   7. TABLAS Y ETIQUETAS
+   ========================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: var(--ieee-dark-blue);
+    color: var(--white);
+    font-weight: 600;
+}
+
+table tr:nth-child(even) {
+    background-color: #F8FAFC;
+}
+
+.tool-tag {
+    display: inline-block;
+    background: var(--ieee-blue);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+/* ==========================================
+   8. RESPONSIVIDAD (MÓVILES Y TABLETS)
+   ========================================== */
+@media (max-width: 900px) {
+    aside {
+        width: 70px;
+    }
+    aside .sidebar-header h2, 
+    aside .sidebar-header .badge, 
+    nav ul li a span {
+        display: none;
+    }
+    main {
+        margin-left: 70px;
+        padding: 20px;
+    }
+    nav ul li a {
+        justify-content: center;
+        padding: 15px;
+    }
+    nav ul li a i {
+        margin-right: 0;
+    }
+}

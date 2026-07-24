@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Asunción de Cargo y Liderazgo IEEE · Zona Centro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue:#1F0AC9;
+    --blue-deep:#140776;
+    --red:#D32F2F;
+    --yellow-1:#FFCD21;
+    --yellow-2:#FFD51D;
+    --gray-bg:#E5E5E5;
+    --ieee-blue:#00629B;
+    --ieee-navy:#003B5C;
+    --ink:#161522;
+    --paper:#FBFBFC;
+    --card:#FFFFFF;
+    --line:rgba(20,7,118,.12);
+    --radius:18px;
+    --maxw:820px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--gray-bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.disp{font-family:'Montserrat',sans-serif;letter-spacing:-.01em}
+  a{color:var(--blue)}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:linear-gradient(160deg,var(--blue) 0%,var(--blue-deep) 65%);
+    color:#fff;
+    padding:60px 22px 84px;
+    overflow:hidden;
+    isolation:isolate;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:-30% -10% auto auto;
+    width:340px;height:340px;
+    border:2px solid rgba(255,255,255,.14);
+    transform:rotate(45deg);
+    border-radius:38px;
+    z-index:-1;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    left:-90px;bottom:-110px;
+    width:220px;height:220px;
+    border:2px solid rgba(255,205,33,.22);
+    transform:rotate(45deg);
+    border-radius:30px;
+    z-index:-1;
+  }
+  .hero-container{
+    max-width:1100px;
+    margin:0 auto;
+    position:relative;
+  }
+  
+  .logo-row{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    position:absolute;
+    top:0;
+    right:0;
+    z-index:10;
+  }
+  .logo-row img{
+    display:block;
+    height:auto;
+    max-height:75px;
+    width:auto;
+    object-fit:contain;
+    background:rgba(255,255,255,.96);
+    padding:10px 16px;
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
+  }
+
+  .hero-content{
+    max-width: 540px;
+    margin-top: 15px;
+  }
+
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    padding:7px 14px;border-radius:999px;
+  }
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--yellow-1)}
+  .hero h1{
+    font-size:clamp(30px,7vw,42px);
+    font-weight:800;
+    margin:20px 0 10px;
+    line-height:1.1;
+  }
+  .hero h1 span{color:var(--yellow-1)}
+  .hero p.lead{
+    max-width:500px;
+    font-size:16px;
+    color:rgba(255,255,255,.86);
+    margin:0 0 26px;
+  }
+
+  .btn-sac{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--red);
+    color:#fff !important;
+    font-family:'Montserrat',sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    padding:12px 22px;
+    border-radius:999px;
+    text-decoration:none;
+    box-shadow:0 6px 20px rgba(211,47,47,.4);
+    transition:transform 0.2s ease, background 0.2s ease;
+  }
+  .btn-sac:hover{
+    transform:translateY(-2px);
+    background:#b71c1c;
+  }
+
+  @media(max-width:920px){
+    .logo-row{
+      position:relative;
+      top:auto;
+      right:auto;
+      margin-bottom:28px;
+      justify-content:flex-start;
+    }
+    .hero-content{
+      max-width:100%;
+      margin-top:0;
+    }
+    .logo-row img{
+      max-height:60px;
+      padding:8px 12px;
+    }
+  }
+
+  /* ---------- NAV ---------- */
+  .navwrap{
+    position:sticky;top:0;z-index:30;
+    background:rgba(251,251,252,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;gap:8px;
+    overflow-x:auto;
+    padding:12px 16px;
+    scrollbar-width:none;
+  }
+  nav::-webkit-scrollbar{display:none}
+  nav a{
+    flex:none;
+    font-family:'Montserrat',sans-serif;
+    font-size:12.5px;font-weight:700;
+    text-decoration:none;
+    color:var(--blue-deep);
+    background:#fff;
+    border:1px solid var(--line);
+    padding:8px 13px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  nav a.on, nav a:active{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  /* ---------- LAYOUT ---------- */
+  main{max-width:var(--maxw);margin:0 auto;padding:0 16px 40px}
+  section{padding:38px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .kicker{
+    display:flex;align-items:center;gap:9px;
+    font-family:'Montserrat',sans-serif;
+    font-size:12px;font-weight:700;
+    letter-spacing:.12em;text-transform:uppercase;
+    color:var(--red);margin-bottom:10px;
+  }
+  .kicker::before{content:"";width:22px;height:2px;background:var(--red)}
+  h2{font-size:25px;font-weight:800;color:var(--blue-deep);margin:0 0 12px}
+  h3{font-size:16px;font-weight:700;margin:16px 0 8px;color:var(--ink)}
+  p{margin:0 0 14px;color:#312f42}
+  .muted{color:#5b586f;font-size:14.5px}
+
+  .card{
+    background:var(--card);
+    border-radius:var(--radius);
+    padding:20px;
+    box-shadow:0 2px 10px rgba(20,7,118,.06);
+    border:1px solid var(--line);
+  }
+  .grid2{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:560px){.grid2{grid-template-columns:1fr 1fr}}
+  .grid3{display:grid;grid-template-columns:1fr;gap:14px}
+  @media(min-width:680px){.grid3{grid-template-columns:1fr 1fr 1fr}}
+
+  /* REGLAS / LISTAS */
+  .rule-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .rule-list li{
+    display:flex;gap:10px;align-items:flex-start;
+    font-size:14.5px;
+  }
+  .badge{
+    flex:none;width:22px;height:22px;border-radius:7px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:13px;font-weight:800;color:#fff;
+    font-family:'Montserrat',sans-serif;
+  }
+  .ok .badge{background:#1c8a4c}
+  .no .badge{background:var(--red)}
+  .ok h3{color:#1c8a4c}
+  .no h3{color:var(--red)}
+
+  /* NOTAS Y ALERTAS */
+  .note{
+    display:flex;gap:12px;
+    background:#FFF7DE;
+    border:1px solid #FFE292;
+    border-radius:14px;
+    padding:14px 16px;
+    font-size:14px;
+  }
+  .note b{color:var(--blue-deep)}
+  .note.red{background:#FDECEC;border-color:#F6C6C6}
+
+  /* TABLAS */
+  table.spec{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
+  table.spec th, table.spec td{text-align:left;padding:10px 10px;border-bottom:1px solid var(--line)}
+  table.spec th{font-family:'Montserrat',sans-serif;color:var(--blue-deep);font-size:12px;text-transform:uppercase;letter-spacing:.04em;background:var(--paper)}
+
+  /* RECURSOS */
+  .reslist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .reslist a{
+    display:flex;justify-content:space-between;align-items:center;
+    gap:10px;
+    background:#fff;border:1px solid var(--line);
+    border-radius:14px;padding:14px 16px;
+    text-decoration:none;color:var(--ink);
+    font-size:14.5px;font-weight:600;
+  }
+  .reslist a span.go{color:var(--red);font-family:'Montserrat',sans-serif;font-weight:800}
+
+  footer{
+    background:var(--blue-deep);color:#fff;
+    padding:34px 22px 46px;text-align:center;
+  }
+  footer .disp{font-size:20px;font-weight:800;margin-bottom:6px}
+  footer a{color:var(--yellow-1);text-decoration:none;font-weight:600}
+  footer .foot-meta{margin-top:14px;font-size:12.5px;color:rgba(255,255,255,.6)}
+
+  ::selection{background:var(--yellow-1);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-container">
+    <div class="logo-row">
+      <img src="imagenes/ieeelogo.png" alt="IEEE Logo">
+      <img src="imagenes/sacteam.png" alt="IEEE SAC Team Zona Centro">
+    </div>
+    
+    <div class="hero-content">
+      <span class="eyebrow"><span class="dot"></span>Ramas Estudiantiles y Capítulos · RNR 2026</span>
+      <h1>Guía de <span>Asunción de Cargo</span><br>y Liderazgo IEEE</h1>
+      <p class="lead">Manual operativo y procedimiento paso a paso para la activación, gestión y dirección de presidentes entrantes en la Sección Colombia.</p>
+      
+      <a href="https://sac.ieee.org.co" target="_blank" rel="noopener" class="btn-sac">
+        Visitar portal SAC Colombia →
+      </a>
+    </div>
+  </div>
+</header>
+
+<div class="navwrap">
+  <nav id="nav">
+    <a href="#rol">1. Rol y Principios</a>
+    <a href="#empalme">2. Primeros 30 Días</a>
+    <a href="#excom">3. Estructura ExCom</a>
+    <a href="#herramientas">4. Herramientas</a>
+    <a href="#elecciones">5. Elecciones</a>
+    <a href="#eventos">6. Eventos y Fondos</a>
+    <a href="#dudas">7. Resolución de Dudas</a>
+    <a href="#etica">8. Código de Ética</a>
+  </nav>
+</div>
+
+<main>
+
+  <section id="rol">
+    <div class="kicker">01 · Dirección Inicial</div>
+    <h2>Filosofía de Liderazgo y Rol del Presidente</h2>
+    <p>Asumir la presidencia de una Rama Estudiantil o Capítulo Técnico implica gestionar equipos, coordinar actividades y mantener la continuidad operativa de la unidad organizativa.</p>
+    
+    <div class="card">
+      <h3>Principio de Trabajo en Voluntariado</h3>
+      <p>El trabajo dentro de IEEE es un voluntariado basado en la motivación, la asignación clara de funciones y la coordinación de equipos. La dirección debe ser colaborativa para evitar la sobrecarga de trabajo en un solo directivo.</p>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Responsabilidades Principales</h3>
+      <ul class="rule-list">
+        <li class="ok"><span class="badge">✓</span><span><b>Dirección General:</b> Establecer el plan de trabajo anual junto con la junta directiva.</span></li>
+        <li class="ok"><span class="badge">✓</span><span><b>Enlace Institucional:</b> Representar a la unidad ante las autoridades de la universidad, el Consejero, la Sección IEEE local y el SAC Regional.</span></li>
+        <li class="ok"><span class="badge">✓</span><span><b>Cumplimiento Normativo:</b> Verificar la entrega oportuna de informes y el cumplimiento de los estatutos oficiales.</span></li>
+        <li class="ok"><span class="badge">✓</span><span><b>Continuidad:</b> Promover la formación de nuevos líderes dentro de la membresía para las siguientes elecciones.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="empalme">
+    <div class="kicker">02 · Proceso de Transición</div>
+    <h2>Los Primeros 30 Días: Procedimiento de Empalme</h2>
+    <p>La transferencia de información entre la junta saliente y la entrante se organiza en tres fases consecutivas para asegurar el traspaso ordenado de la unidad.</p>
+    
+    <div class="grid3">
+      <div class="card">
+        <h3>A. Documentación</h3>
+        <p class="muted">El equipo saliente debe entregar:</p>
+        <ul class="rule-list">
+          <li class="ok"><span class="badge">1</span><span>Credenciales de vTools, eNotice, web y redes sociales.</span></li>
+          <li class="ok"><span class="badge">2</span><span>Cuentas bancarias o firmas autorizadas.</span></li>
+          <li class="ok"><span class="badge">3</span><span>Actas, estatutos locales y plan anual previo.</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>B. Reunión de Traspaso</h3>
+        <p class="muted">Sesión de trabajo entre ambas juntas para revisar el estado financiero, explicar los procesos pendientes y mostrar el uso operativo de vTools.</p>
+      </div>
+
+      <div class="card">
+        <h3>C. Activación Entrante</h3>
+        <p class="muted">Acciones prioritarias de la junta nueva:</p>
+        <ul class="rule-list">
+          <li class="ok"><span class="badge">1</span><span>Actualizar directivos en vTools.OfficerReporting.</span></li>
+          <li class="ok"><span class="badge">2</span><span>Subir el Plan Anual.</span></li>
+          <li class="ok"><span class="badge">3</span><span>Registrar el primer evento en vTools.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note red" style="margin-top:14px">
+      <span>⚠️</span>
+      <span><b>Plazos de Cumplimiento Financiero:</b> El reporte de directivos debe registrarse en vTools al finalizar la elección. El límite de entrega para mantener la condición activa es el <b>15 de marzo</b>. Reportar antes del <b>tercer viernes de febrero</b> otorga un 10% adicional sobre el reembolso económico anual (rebate).</span>
+    </div>
+  </section>
+
+  <section id="excom">
+    <div class="kicker">03 · Estructura Organizativa</div>
+    <h2>Comité Ejecutivo (ExCom) y Funciones</h2>
+    <p>La asignación clara de tareas dentro del Comité Ejecutivo evita la duplicidad de funciones y asegura el funcionamiento operativo de la rama o capítulo.</p>
+    
+    <div class="card">
+      <table class="spec">
+        <tr><th>Cargo</th><th>Responsabilidad Operativa</th><th>Impacto Directo</th></tr>
+        <tr>
+          <td><b>Presidente</b></td>
+          <td>Dirección general, representación institucional, seguimiento de compromisos.</td>
+          <td>Coordinación general del plan anual.</td>
+        </tr>
+        <tr>
+          <td><b>Vicepresidente</b></td>
+          <td>Coordinación de comités de trabajo y seguimiento a capítulos técnicos/grupos de afinidad.</td>
+          <td>Soporte operativo y sucesión de cargo.</td>
+        </tr>
+        <tr>
+          <td><b>Secretario</b></td>
+          <td>Redacción de actas, custodia de archivos, correspondencia y reportes administrativos.</td>
+          <td>Mantenimiento del historial documental.</td>
+        </tr>
+        <tr>
+          <td><b>Tesorero</b></td>
+          <td>Elaboración del presupuesto, administración de ingresos, egresos y comprobantes.</td>
+          <td>Gestión financiera y balance de cuentas.</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="note" style="margin-top:14px">
+      <span>💡</span>
+      <span><b>Asignación para Equipos Pequeños:</b> En unidades con pocos integrantes, el Secretario asume la administración de canales digitales; el Vicepresidente coordina eventos; el Tesorero gestiona logística y patrocinios; y el Presidente lidera la membresía y el contacto institucional.</span>
+    </div>
+  </section>
+
+  <section id="herramientas">
+    <div class="kicker">04 · Plataformas Oficiales</div>
+    <h2>Plataformas Digitales de Gestión</h2>
+    <p>IEEE dispone de herramientas centralizadas para el reporte de actividades, administración de miembros y capacitación.</p>
+    
+    <div class="grid2">
+      <div class="card">
+        <h3>vTools</h3>
+        <p class="muted">Plataforma principal utilizada para actualizar la junta directiva (Officer Reporting), publicar eventos (Events / L31) y realizar votaciones oficiales (eBallot).</p>
+      </div>
+      <div class="card">
+        <h3>OU Analytics (SAMIEEE)</h3>
+        <p class="muted">Acceso disponible para Presidentes y Consejeros. Permite consultar la lista actualizada de miembros, analizar estadísticas y revisar renovaciones pendientes.</p>
+      </div>
+      <div class="card">
+        <h3>IEEE eNotice y Collabratec</h3>
+        <p class="muted">eNotice envía convocatorias por correo electrónico a los miembros de la sección. Collabratec es la red de interacción y trabajo técnico de la organización.</p>
+      </div>
+      <div class="card">
+        <h3>Center for Leadership Excellence (CLE)</h3>
+        <p class="muted">Módulos de capacitación en línea diseñados para la instrucción operativa de cada cargo dentro de la junta directiva.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="elecciones">
+    <div class="kicker">05 · Gobernanza</div>
+    <h2>Calendario Anual y Proceso Electoral</h2>
+    <p>Las elecciones deben ejecutarse de manera transparente siguiendo las fechas establecidas en la planificación de la sección.</p>
+    
+    <div class="card">
+      <h3>Cronograma del Proceso Electoral</h3>
+      <ul class="checklist">
+        <li><input type="checkbox" id="e1" checked disabled><label for="e1"><b>Mayo – Junio:</b> Inicio de la preparación de la convocatoria electoral.</label></li>
+        <li><input type="checkbox" id="e2" checked disabled><label for="e2"><b>1 de Agosto:</b> Apertura oficial de postulaciones (mínimo 30 días activas).</label></li>
+        <li><input type="checkbox" id="e3" checked disabled><label for="e3"><b>Octubre – Noviembre:</b> Votación a través de vTools eBallot (mínimo 2 semanas).</label></li>
+        <li><input type="checkbox" id="e4" checked disabled><label for="e4"><b>15 de Diciembre:</b> Publicación de resultados e inicio de reuniones de empalme.</label></li>
+      </ul>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Requisitos del Comité Electoral</h3>
+      <p>El proceso debe ser supervisado por un comité de mínimo 3 miembros habilitados. Solamente un integrante del ExCom en ejercicio puede formar parte de este comité para garantizar la independencia del proceso. Candidatos y votantes deben mantener su membresía IEEE activa.</p>
+    </div>
+  </section>
+
+  <section id="eventos">
+    <div class="kicker">06 · Operación Financiera</div>
+    <h2>Organización de Eventos y Financiamiento</h2>
+    <p>Para la ejecución de actividades de mayor escala (como seminarios, talleres o eventos SPAC) se recomienda estructurar comités temporales de trabajo.</p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Comités Operativos de Eventos</h3>
+        <ul class="rule-list">
+          <li class="ok"><span class="badge">•</span><span>Comité Organizador y de Finanzas.</span></li>
+          <li class="ok"><span class="badge">•</span><span>Comité de Logística y Servicios Generales.</span></li>
+          <li class="ok"><span class="badge">•</span><span>Comité de Ponencias e Invitados.</span></li>
+          <li class="ok"><span class="badge">•</span><span>Comité de Contingencias (resolución de imprevistos durante la actividad).</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Fuentes de Financiamiento</h3>
+        <ul class="rule-list">
+          <li class="ok"><span class="badge">•</span><span><b>Rebates Anuales:</b> Asignación enviada por MGA tras reportar actividades y directivos a tiempo.</span></li>
+          <li class="ok"><span class="badge">•</span><span><b>Fondos SPAC:</b> Apoyo económico para conferencias de desarrollo profesional.</span></li>
+          <li class="ok"><span class="badge">•</span><span><b>Subvenciones de Proyectos:</b> Programas EPICS, HAC o SIGHT para proyectos aplicados.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="dudas">
+    <div class="kicker">07 · Canales de Soporte</div>
+    <h2>Procedimiento para la Resolución de Dudas</h2>
+    <p>Ante consultas operativas o administrativas, la junta directiva debe seguir la cadena de contacto correspondiente:</p>
+
+    <div class="grid3">
+      <div class="card">
+        <h3>1. Nivel Local</h3>
+        <p class="muted">Consulta inicial con el Consejero de la Rama (Branch Counselor) y el Mentor designado por la Sección.</p>
+      </div>
+
+      <div class="card">
+        <h3>2. Nivel Sección</h3>
+        <p class="muted">Contacto con el Presidente de Actividades Estudiantiles de Sección (SSAC) y el Representante Estudiantil de Sección (SSR).</p>
+      </div>
+
+      <div class="card">
+        <h3>3. Nivel Regional</h3>
+        <p class="muted">Consultas al equipo R9 SAC Team, dirigido por el RSAC y el RSR de la Región 9.</p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Jerarquía Documental</h3>
+      <p class="muted">Frente a dudas sobre normas o procedimientos, el orden de validez es el siguiente:</p>
+      <ol style="margin:0;padding-left:20px;font-size:14px">
+        <li>Constitución y Reglamentos del IEEE.</li>
+        <li>Manual de Políticas y Procedimientos del MGA.</li>
+        <li>Estatutos de la Región 9.</li>
+        <li>Estatutos de la Sección Colombia y de la Rama Estudiantil local.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="etica">
+    <div class="kicker">08 · Normativa Institucional</div>
+    <h2>Código de Ética del IEEE</h2>
+    <p>Los directivos y miembros de la organización se comprometen a mantener los más altos estándares de conducta profesional:</p>
+
+    <div class="card">
+      <ul class="rule-list">
+        <li class="ok"><span class="badge">1</span><span>Tomar decisiones acordes a la seguridad, salud y bienestar del público.</span></li>
+        <li class="ok"><span class="badge">2</span><span>Evitar y declarar oportunamente posibles conflictos de interés.</span></li>
+        <li class="ok"><span class="badge">3</span><span>Presentar datos, estimaciones e informes de forma honesta y verificable.</span></li>
+        <li class="ok"><span class="badge">4</span><span>Rechazar cualquier práctica o forma de soborno.</span></li>
+        <li class="ok"><span class="badge">5</span><span>Tratar con respeto y equidad a todas las personas sin distinción alguna.</span></li>
+        <li class="ok"><span class="badge">6</span><span>Apoyar el desarrollo profesional de los miembros y colaboradores del equipo.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="recursos">
+    <div class="kicker">09 · Enlaces Oficiales</div>
+    <h2>Recursos e Información Directa</h2>
+    <ul class="reslist">
+      <li><a href="https://sac.ieee.org.co" target="_blank" rel="noopener">Portal SAC Colombia <span class="go">→</span></a></li>
+      <li><a href="https://officers.vtools.ieee.org/" target="_blank" rel="noopener">vTools Officer Reporting <span class="go">→</span></a></li>
+      <li><a href="https://events.vtools.ieee.org/" target="_blank" rel="noopener">vTools Events (L31) <span class="go">→</span></a></li>
+      <li><a href="https://cle.ieee.org/" target="_blank" rel="noopener">Center for Leadership Excellence (CLE) <span class="go">→</span></a></li>
+      <li><a href="mailto:sac@ieee.org.co">Contacto Directo SAC Colombia: sac@ieee.org.co <span class="go">→</span></a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="disp">IEEE Sección Colombia · SAC Team</div>
+  <p style="margin:0 0 4px"><a href="mailto:sac@ieee.org.co">sac@ieee.org.co</a></p>
+  <p style="margin:0"><a href="https://sac.ieee.org.co" target="_blank" rel="noopener">https://sac.ieee.org.co</a></p>
+  <div class="foot-meta">Guía de Asunción de Cargo y Liderazgo · Basado en el Manual de Operaciones de Ramas Estudiantiles IEEE (MORE R9)</div>
+</footer>
+
+<script>
+  // resalta el enlace de navegación de la sección visible
+  const links = [...document.querySelectorAll('#nav a')];
+  const sections = links.map(l => document.querySelector(l.getAttribute('href')));
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const id = '#' + e.target.id;
+        links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === id));
+      }
+    });
+  }, {rootMargin: '-30% 0px -60% 0px'});
+  sections.forEach(s => s && io.observe(s));
+</script>
+
+</body>
+</html>
