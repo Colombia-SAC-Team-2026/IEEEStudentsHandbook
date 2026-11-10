@@ -44,6 +44,13 @@ a:hover { text-decoration: underline; }
 .topbar .brand img { height: 24px; }
 .topbar .spacer { flex: 1; }
 .topbar a.ext { font-weight: 500; font-size: 13.5px; }
+#back {
+  background: none; border: 1px solid var(--line); color: var(--body);
+  border-radius: 6px; padding: 5px 10px; font: inherit; font-size: 13.5px; cursor: pointer;
+}
+#back { white-space: nowrap; }
+@media (max-width: 480px) { .topbar .brand span { display: none; } }
+#back:hover { border-color: #A1A1AA; color: var(--ink); }
 #menu-toggle {
   display: none;
   background: none; border: 1px solid var(--line); color: var(--ink);
@@ -66,8 +73,24 @@ a:hover { text-decoration: underline; }
   border: 1px solid var(--line); border-radius: 6px;
   font: inherit; font-size: 13.5px; background: var(--paper);
 }
-#sidebar .group { margin-top: 18px; }
-#sidebar .group-title { font-family: var(--mono); font-size: 12px; color: var(--muted); padding: 0 10px; margin: 0 0 6px; }
+#sidebar .home-link { display: block; margin-top: 14px; padding: 6px 10px; border-radius: 6px; color: var(--ink); font-weight: 600; font-size: 14px; }
+#sidebar details.group { margin-top: 6px; }
+#sidebar summary {
+  display: flex; align-items: center; gap: 6px;
+  list-style: none; cursor: pointer; border-radius: 6px;
+}
+#sidebar summary::-webkit-details-marker { display: none; }
+/* chevron on the left toggles; the title link navigates to the section's overview page */
+#sidebar summary::before {
+  content: '▸'; flex: none; width: 18px; text-align: center;
+  color: var(--muted); font-size: 12px; transition: transform .15s ease;
+}
+#sidebar details[open] > summary::before { transform: rotate(90deg); }
+#sidebar summary a { flex: 1; padding: 6px 10px 6px 0; color: var(--ink); font-weight: 600; font-size: 14px; }
+#sidebar summary a:hover, #sidebar .home-link:hover { text-decoration: none; color: var(--blue); }
+#sidebar summary a.on, #sidebar .home-link.on { color: var(--blue); }
+#sidebar .home-link.on { background: var(--paper); box-shadow: inset 0 0 0 1px var(--line); }
+#sidebar details ul { margin-left: 18px; }
 #sidebar ul { list-style: none; margin: 0; padding: 0; }
 #sidebar li a { display: block; padding: 6px 10px; border-radius: 6px; color: var(--body); font-size: 14px; }
 #sidebar li a:hover { background: #F0F0F2; text-decoration: none; }
@@ -112,6 +135,10 @@ p { margin: 0 0 14px; }
 a.card { display: block; color: inherit; }
 a.card:hover { border-color: #A1A1AA; text-decoration: none; }
 a.card h3 { color: var(--blue); }
+.subtitle { display: block; font-size: .6em; font-weight: 400; color: var(--muted); margin-top: 2px; }
+.quick { margin-bottom: 28px; }
+.quick .card { padding: 22px 24px; border-color: #D4D4D8; }
+.quick .card h3 { font-size: 19px; }
 .grid2, .grid3 { display: grid; grid-template-columns: 1fr; gap: 14px; }
 .grid2 > .card, .grid3 > .card { margin-bottom: 0; }
 @media (min-width: 560px) { .grid2 { grid-template-columns: 1fr 1fr; } }

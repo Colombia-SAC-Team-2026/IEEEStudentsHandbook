@@ -14,7 +14,8 @@
 
 <header class="topbar">
   <button id="menu-toggle" aria-controls="sidebar" aria-label="Abrir menú">☰</button>
-  <a class="brand" href="#inicio"><img src="imagenes/ieeelogo.webp" alt="IEEE">Wiki Ramas Estudiantiles</a>
+  <button id="back" type="button" aria-label="Volver a la página anterior">← Atrás</button>
+  <a class="brand" href="#inicio"><img src="imagenes/ieeelogo.webp" alt="IEEE"><span>Wiki Ramas Estudiantiles</span></a>
   <span class="spacer"></span>
   <a class="ext" href="https://sac.ieee.org.co" target="_blank" rel="noopener">Portal SAC Colombia →</a>
 </header>
@@ -23,163 +24,519 @@
 <aside id="sidebar" aria-label="Páginas de la wiki">
   <input id="search" type="search" placeholder="Buscar en la wiki…" aria-label="Buscar en la wiki">
   <p id="no-results" hidden>Sin resultados. Prueba otra palabra.</p>
-
-  <div class="group">
-    <p class="group-title">Empezar</p>
+  <a class="home-link" href="#inicio" data-page="inicio">Inicio</a>
+  <details class="group">
+    <summary><a href="#conoce-ieee" data-page="conoce-ieee">Conoce IEEE</a></summary>
     <ul>
-      <li><a href="#inicio" data-page="inicio">Inicio</a></li>
-      <li><a href="#rol" data-page="rol">Rol del presidente</a></li>
-      <li><a href="#primeros-30-dias" data-page="primeros-30-dias">Primeros 30 días</a></li>
+        <li><a href="#glosario" data-page="glosario">Glosario</a></li>
     </ul>
-  </div>
-  <div class="group">
-    <p class="group-title">Operación de la Rama</p>
+  </details>
+  <details class="group">
+    <summary><a href="#cargos" data-page="cargos">Cargos</a></summary>
     <ul>
-      <li><a href="#requisitos" data-page="requisitos">Requisitos de una Rama</a></li>
-      <li><a href="#reportes" data-page="reportes">Reportes y fechas límite</a></li>
-      <li><a href="#membresia" data-page="membresia">Año de membresía</a></li>
-      <li><a href="#excom" data-page="excom">ExCom y funciones</a></li>
-      <li><a href="#capitulos" data-page="capitulos">Capítulos y Grupos de Afinidad</a></li>
-      <li><a href="#elecciones" data-page="elecciones">Elecciones</a></li>
+        <li><a href="#presidente-rama" data-page="presidente-rama">Presidente de Rama</a></li>
+        <li><a href="#presidente-capitulo" data-page="presidente-capitulo">Presidente de Capítulo Técnico</a></li>
+        <li><a href="#presidente-grupo-afinidad" data-page="presidente-grupo-afinidad">Presidente de Grupo de Afinidad</a></li>
+        <li><a href="#vicepresidente" data-page="vicepresidente">Vicepresidente</a></li>
+        <li><a href="#secretario" data-page="secretario">Secretario</a></li>
+        <li><a href="#tesorero" data-page="tesorero">Tesorero</a></li>
+        <li><a href="#consejero" data-page="consejero">Consejero y asesores</a></li>
     </ul>
-  </div>
-  <div class="group">
-    <p class="group-title">Recursos</p>
+  </details>
+  <details class="group">
+    <summary><a href="#operacion" data-page="operacion">Operación</a></summary>
     <ul>
-      <li><a href="#herramientas" data-page="herramientas">Herramientas digitales</a></li>
-      <li><a href="#fondos" data-page="fondos">Rebates y financiación</a></li>
-      <li><a href="#premios" data-page="premios">Premios y concursos</a></li>
-      <li><a href="#capacitacion" data-page="capacitacion">Capacitación</a></li>
-      <li><a href="#marca" data-page="marca">Marca y comunicación</a></li>
-      <li><a href="#contacto" data-page="contacto">¿A quién preguntar?</a></li>
-      <li><a href="#glosario" data-page="glosario">Glosario</a></li>
-      <li><a href="#enlaces" data-page="enlaces">Todos los enlaces</a></li>
+        <li><a href="#requisitos" data-page="requisitos">Requisitos de una Rama</a></li>
+        <li><a href="#reportes" data-page="reportes">Reportes y fechas límite</a></li>
+        <li><a href="#membresia" data-page="membresia">Año de membresía</a></li>
+        <li><a href="#excom" data-page="excom">ExCom y funciones</a></li>
+        <li><a href="#capitulos" data-page="capitulos">Capítulos y Grupos de Afinidad</a></li>
+        <li><a href="#elecciones" data-page="elecciones">Elecciones</a></li>
     </ul>
-  </div>
+  </details>
+  <details class="group">
+    <summary><a href="#recursos" data-page="recursos">Recursos</a></summary>
+    <ul>
+        <li><a href="#herramientas" data-page="herramientas">Herramientas digitales</a></li>
+        <li><a href="#fondos" data-page="fondos">Rebates y financiación</a></li>
+        <li><a href="#premios" data-page="premios">Premios y concursos</a></li>
+        <li><a href="#capacitacion" data-page="capacitacion">Capacitación</a></li>
+        <li><a href="#cursos-cle" data-page="cursos-cle">Cursos del CLE</a></li>
+        <li><a href="#marca" data-page="marca">Marca y comunicación</a></li>
+        <li><a href="#contacto" data-page="contacto">¿A quién preguntar?</a></li>
+        <li><a href="#enlaces" data-page="enlaces">Todos los enlaces</a></li>
+    </ul>
+  </details>
 </aside>
 
 <main>
 
-<!-- ============ INICIO ============ -->
 <article class="page" id="inicio">
   <div class="intro">
     <div class="kicker">Ramas Estudiantiles · IEEE Sección Colombia</div>
-    <h1>Bienvenido a la wiki de Ramas Estudiantiles</h1>
-    <p class="lead">Una guía en español para quienes dirigen una Rama Estudiantil, un Capítulo de Rama o un Grupo de Afinidad de IEEE en Colombia. Explica cómo funcionan estas unidades y te lleva a la fuente oficial de cada tema.</p>
+    <h1>Wiki de Ramas Estudiantiles</h1>
+    <p class="lead">Información práctica para directivos de Ramas Estudiantiles, Capítulos y Grupos de Afinidad de IEEE en Colombia. ¿Qué necesitas?</p>
   </div>
+
+  <div class="grid2 quick">
+    <a class="card" href="#conoce-ieee"><h3>¿Qué es IEEE?</h3><p class="muted">Cómo funciona IEEE, qué son las Ramas, los Capítulos y los Grupos de Afinidad, y los cursos introductorios.</p></a>
+    <a class="card" href="#cargos"><h3>Soy directivo</h3><p class="muted">Qué hace cada cargo, con su checklist recomendado y sus cursos: presidentes, vicepresidente, secretario, tesorero y Consejero.</p></a>
+    <a class="card" href="#operacion"><h3>Cómo operar una Rama o Capítulo</h3><p class="muted">Requisitos, reportes y fechas límite, membresía, ExCom, Capítulos y elecciones.</p></a>
+    <a class="card" href="#recursos"><h3>Recursos útiles</h3><p class="muted">Herramientas, financiación, premios, capacitación, cursos del CLE, marca y contactos.</p></a>
+  </div>
+
+  <h3>Cómo usar esta wiki</h3>
+  <ul>
+    <li>Navega con el menú de la izquierda (en el celular, con el botón ☰). Los títulos de cada sección también abren una página de resumen.</li>
+    <li>Usa el buscador para encontrar un tema en todas las páginas, y el botón «Atrás» para volver.</li>
+    <li>Cada página es un resumen corto que enlaza a la fuente oficial. Si algo no coincide, manda la fuente oficial.</li>
+  </ul>
+
+  <p class="sources">Última revisión: noviembre de 2026. Fuentes principales: <a href="https://mga.ieee.org/board-committees/operations-manual" target="_blank" rel="noopener">Manual de Operaciones de MGA</a> (edición de junio de 2026) y el <a href="https://ieee-elearning.org/CLE/" target="_blank" rel="noopener">Center for Leadership Excellence (CLE)</a>.</p>
+</article>
+
+<article class="page" id="conoce-ieee" hidden>
+  <div class="kicker">Conoce IEEE</div>
+  <h2>¿Qué es IEEE?</h2>
+  <p class="lead">IEEE es una organización profesional sin ánimo de lucro dedicada al avance de la tecnología, con miembros y voluntarios en todo el mundo. Los estudiantes participan a través de las Ramas Estudiantiles de sus universidades.</p>
+  <p>Video corto: <a href="https://www.youtube.com/watch?v=H_UuN89Mu4Y" target="_blank" rel="noopener">All About IEEE Students</a> (IEEE Students).</p>
 
   <h3>¿Qué es una Rama Estudiantil?</h3>
   <p>Una <b>Rama Estudiantil</b> (Student Branch) es el grupo oficial de IEEE en una universidad. La forman al menos 12 estudiantes miembros de IEEE, la acompaña un profesor Consejero y la dirige una junta de estudiantes, el ExCom. Organiza charlas, talleres, competencias y proyectos, y conecta a sus miembros con el resto de IEEE. Ver <a href="#requisitos">Requisitos de una Rama</a>.</p>
+
 
   <h3>¿Y los Capítulos y Grupos de Afinidad?</h3>
   <p>Dentro de una Rama pueden existir unidades más pequeñas con un enfoque propio:</p>
   <ul>
     <li><b>Capítulo de Rama</b> (Student Branch Chapter): reúne a estudiantes de una misma Sociedad técnica de IEEE, por ejemplo Computer Society, Robotics and Automation o Power &amp; Energy.</li>
-    <li><b>Grupo de Afinidad</b> (Affinity Group): reúne a estudiantes alrededor de un interés común que no es técnico, como Women in Engineering (WIE).</li>
+    <li><b>Grupo de Afinidad</b> (Affinity Group): reúne a estudiantes alrededor de un interés común que no es técnico, como Women in Engineering (WIE) o SIGHT (tecnología para el desarrollo sostenible).</li>
   </ul>
   <p>Ambos funcionan como comités de la Rama y necesitan al menos 6 miembros para crearse. Ver <a href="#capitulos">Capítulos y Grupos de Afinidad</a>.</p>
+
 
   <div class="photo"><img src="imagenes/ICESI.webp" alt="Miembros de una Rama Estudiantil IEEE reunidos en su universidad"></div>
 
   <h3>¿Dónde encaja la Rama dentro de IEEE?</h3>
   <ul>
     <li><b>Rama Estudiantil</b>, con sus Capítulos y Grupos de Afinidad.</li>
-    <li><b>Sección Colombia</b>: agrupa a las Ramas del país. Su equipo de actividades estudiantiles es el SAC Colombia.</li>
+    <li><b>Sección Colombia</b>: agrupa a las Ramas del país, organizadas en cinco zonas: Antioquia, Centro, Eje Cafetero, Santanderes y Suroccidente (<a href="https://www.google.com/maps/d/viewer?mid=1RM2Ua3vGE2Tw4CMoe3bfAZ0nLOAjCbE" target="_blank" rel="noopener">mapa</a>). Su equipo de actividades estudiantiles es el SAC Colombia.</li>
     <li><b>Región 9</b> (Latinoamérica): coordina a las Secciones de la región y tiene su propio SAC.</li>
     <li><b>IEEE</b>, a través de Member and Geographic Activities (MGA), que define las reglas para todas las unidades.</li>
   </ul>
   <p>Las siglas se explican en el <a href="#glosario">Glosario</a>.</p>
 
-  <h3>Cómo usar esta wiki</h3>
-  <ul>
-    <li>Navega con el menú de la izquierda (en el celular, con el botón ☰).</li>
-    <li>Usa el buscador para encontrar un tema en todas las páginas.</li>
-    <li>Cada página es un resumen corto. El detalle está en los enlaces a las fuentes oficiales, que siempre mandan si hay diferencias.</li>
-    <li>La formación oficial para cada cargo está en el <a href="https://ieee-elearning.org/CLE/" target="_blank" rel="noopener">Center for Leadership Excellence (CLE)</a> de IEEE. Muchas páginas te enviarán allí.</li>
+
+  <h3>Cursos introductorios</h3>
+  <p>Cursos cortos del CLE para entender IEEE. Necesitas tu cuenta IEEE.</p>
+  <ul class="reslist">
+    <li><a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE<small>Introducción a IEEE: organización, estructura global, gobernanza y dirección estratégica. Grabación, presentación y cuestionario. Grabación de VoLT.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA<small>Introducción a Member and Geographic Activities (MGA): su estructura, sus servicios y los recursos para voluntarios. 19 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=241" target="_blank" rel="noopener">Introduction to IEEE Affinity Groups<small>Introducción a los Grupos de Afinidad (WIE, Young Professionals, Life Members y Consultants Network): estructura, programas y recursos. 4 grabaciones.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=242" target="_blank" rel="noopener">Introduction to Technical Activities TAB<small>Introducción a Technical Activities: las Sociedades técnicas, su estructura y sus recursos. 40 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=244" target="_blank" rel="noopener">Introduction to IEEE Educational Activities EAB<small>Introducción a Educational Activities: programas de desarrollo profesional y cómo aprovecharlos. 20 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics<small>El Código de Ética de IEEE, que todo miembro se compromete a cumplir. Lectura.</small><span class="go">→</span></a></li>
   </ul>
-
-  <h3>Secciones de la wiki</h3>
-  <div class="grid3">
-    <a class="card" href="#rol"><h3>Empezar</h3><p class="muted">El rol del presidente y una lista de verificación para tus primeros 30 días.</p></a>
-    <a class="card" href="#requisitos"><h3>Operación de la Rama</h3><p class="muted">Requisitos, reportes y fechas, membresía, ExCom, Capítulos y elecciones.</p></a>
-    <a class="card" href="#herramientas"><h3>Recursos</h3><p class="muted">Herramientas, financiación, premios, capacitación, marca, contactos y glosario.</p></a>
-  </div>
-
-  <p class="sources">Última revisión: noviembre de 2026. Fuente principal: <a href="https://mga.ieee.org/board-committees/operations-manual" target="_blank" rel="noopener">Manual de Operaciones de MGA</a> (edición de junio de 2026).</p>
+  <p>Más cursos en <a href="#cursos-cle">Cursos del CLE</a>. Las siglas están en el <a href="#glosario">Glosario</a>.</p>
 </article>
 
-<!-- ============ ROL ============ -->
-<article class="page" id="rol" hidden>
-  <div class="kicker">Empezar</div>
-  <h2>Rol del presidente de la Rama</h2>
-  <p>Presidir una Rama Estudiantil es gestionar un equipo de voluntarios, coordinar actividades y mantener la Rama activa ante IEEE y ante la universidad.</p>
+<article class="page" id="glosario" hidden>
+  <div class="kicker">Recursos</div>
+  <h2>Glosario</h2>
+  <p>Siglas y términos que vas a encontrar en IEEE. Usa el buscador del menú para saltar a la página donde aparecen.</p>
+  <dl class="glossary">
+    <dt>Action Plan <small>Plan de acción</small></dt><dd>Lista de tareas del CLE para cada cargo: primeros 30 días, tareas administrativas clave y tareas anuales. <a href="#capacitacion">Ver por cargo</a>.</dd>
+    <dt>Advisor <small>Asesor</small></dt><dd>Profesor o miembro que acompaña a un Capítulo o Grupo de Afinidad de Rama.</dd>
+    <dt>Affinity Group (AG) <small>Grupo de Afinidad</small></dt><dd>Unidad que reúne a miembros por un interés común no técnico, como WIE o Young Professionals. <a href="#capitulos">Ver más</a>.</dd>
+    <dt>Annual Plan <small>Plan Anual</small></dt><dd>Plan de actividades del año que cada Rama sube en vTools SB Reporting antes del 15 de marzo.</dd>
+    <dt>Branch Counselor <small>Consejero de Rama</small></dt><dd>Profesor miembro de IEEE que acompaña a la Rama. Lo nombra el presidente de la Sección.</dd>
+    <dt>CLE <small>Center for Leadership Excellence</small></dt><dd>Plataforma de formación de IEEE para voluntarios, con descripciones de cargos y cursos. <a href="https://ieee-elearning.org/CLE/" target="_blank" rel="noopener">ieee-elearning.org/CLE</a>.</dd>
+    <dt>Collabratec</dt><dd>Red profesional y de colaboración de IEEE.</dd>
+    <dt>eNotice</dt><dd>Herramienta de vTools para enviar convocatorias por correo a los miembros.</dd>
+    <dt>EPICS <small>EPICS in IEEE</small></dt><dd>Programa que financia proyectos de ingeniería con impacto en la comunidad.</dd>
+    <dt>ExCom <small>Comité Ejecutivo</small></dt><dd>Junta directiva de la Rama: presidente, vicepresidente, secretario y tesorero, como mínimo.</dd>
+    <dt>Good standing <small>Al día</small></dt><dd>Miembro con la membresía pagada para el año en curso.</dd>
+    <dt>Graduate Student Member (GSM) <small>Miembro estudiante de posgrado</small></dt><dd>Grado de membresía para estudiantes de maestría o doctorado.</dd>
+    <dt>IEEE Day</dt><dd>Celebración anual de IEEE en octubre, con concursos para Ramas.</dd>
+    <dt>IEEEXtreme</dt><dd>Competencia global de programación de 24 horas para estudiantes miembros.</dd>
+    <dt>MGA <small>Member and Geographic Activities</small></dt><dd>Área de IEEE que define las reglas de Secciones, Ramas y demás unidades, en su Manual de Operaciones.</dd>
+    <dt>OU <small>Organizational Unit</small></dt><dd>Unidad organizacional: cualquier Rama, Capítulo, Grupo de Afinidad o Sección.</dd>
+    <dt>OU Analytics</dt><dd>Herramienta para consultar la lista de miembros y renovaciones de tu unidad.</dd>
+    <dt>Rebate <small>Reembolso</small></dt><dd>Dinero que IEEE devuelve cada año a las unidades activas que cumplen sus reportes. <a href="#fondos">Ver más</a>.</dd>
+    <dt>Región 9 (R9)</dt><dd>Región de IEEE que agrupa a Latinoamérica y el Caribe.</dd>
+    <dt>RNR <small>Reunión Nacional de Ramas</small></dt><dd>Encuentro nacional anual de Ramas Estudiantiles de Colombia, donde se entregan los <a href="#premios">premios del SAC Colombia</a>.</dd>
+    <dt>RSAC / RSR</dt><dd>Presidente del SAC de la Región y Representante Estudiantil de la Región.</dd>
+    <dt>SAC <small>Student Activities Committee</small></dt><dd>Comité de Actividades Estudiantiles. Existe en la Sección (SAC Colombia), en la Región y en MGA.</dd>
+    <dt>SBRM <small>Student Branch Regional Meeting</small></dt><dd>Reunión regional de Ramas Estudiantiles de la Región 9.</dd>
+    <dt>Sección <small>Section</small></dt><dd>Unidad geográfica de IEEE. Las Ramas de Colombia pertenecen a la Sección Colombia.</dd>
+    <dt>Society <small>Sociedad</small></dt><dd>Comunidad técnica de IEEE (por ejemplo, Computer Society). Sus Capítulos de Rama se llaman Student Branch Chapters.</dd>
+    <dt>SIGHT <small>Special Interest Group on Humanitarian Technology</small></dt><dd>Grupo de IEEE que usa la tecnología para el desarrollo sostenible de comunidades. También existe como Grupo de Afinidad de Rama.</dd>
+    <dt>SPAx <small>Student Professional Awareness</small></dt><dd>Programa que financia eventos de desarrollo profesional para estudiantes. Antes se llamaba SPAC.</dd>
+    <dt>SSAC / SSR</dt><dd>Presidente de Actividades Estudiantiles de la Sección y Representante Estudiantil de la Sección.</dd>
+    <dt>STEP <small>Student Transition and Elevation Partnership</small></dt><dd>Eventos para la transición de estudiante a profesional, financiados por Young Professionals.</dd>
+    <dt>Student Branch (SB) <small>Rama Estudiantil</small></dt><dd>Grupo oficial de IEEE en una universidad, con al menos 12 estudiantes miembros. <a href="#requisitos">Ver más</a>.</dd>
+    <dt>Student Branch Chapter (SBC) <small>Capítulo de Rama</small></dt><dd>Subunidad técnica de una Rama, ligada a una Sociedad. Requiere 6 miembros para crearse.</dd>
+    <dt>Student Member <small>Miembro estudiante</small></dt><dd>Grado de membresía para estudiantes de pregrado.</dd>
+    <dt>vTools</dt><dd>Conjunto de herramientas en línea de IEEE para voluntarios: reportes de directivos, eventos, Plan Anual y más.</dd>
+    <dt>VoLT <small>Volunteer Leadership Training</small></dt><dd>Programa de formación de liderazgo del CLE.</dd>
+    <dt>WIE <small>Women in Engineering</small></dt><dd>Grupo de Afinidad de IEEE que promueve la participación de mujeres en ingeniería.</dd>
+    <dt>YP <small>Young Professionals</small></dt><dd>Grupo de Afinidad para miembros recién graduados.</dd>
+  </dl>
+</article>
 
+<article class="page" id="cargos" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Soy directivo</h2>
+  <p>Elige tu cargo para ver qué hace, su checklist recomendado y sus cursos. Vicepresidente, Secretario y Tesorero funcionan igual en una Rama, un Capítulo o un Grupo de Afinidad, y el CLE les recomienda casi los mismos cursos; por eso comparten página.</p>
+  <div class="grid2">
+    <a class="card" href="#presidente-rama"><h3>Presidente de Rama</h3><p class="muted">Dirige la Rama, la representa ante la universidad y la Sección, y responde por los reportes obligatorios.</p></a>
+    <a class="card" href="#presidente-capitulo"><h3>Presidente de Capítulo Técnico</h3><p class="muted">Dirige un Capítulo ligado a una Sociedad técnica de IEEE, dentro de la Rama.</p></a>
+    <a class="card" href="#presidente-grupo-afinidad"><h3>Presidente de Grupo de Afinidad</h3><p class="muted">Dirige un Grupo de Afinidad de la Rama, como Women in Engineering (WIE) o SIGHT.</p></a>
+    <a class="card" href="#vicepresidente"><h3>Vicepresidente <small class="subtitle">de Rama, Capítulo o Grupo de Afinidad</small></h3><p class="muted">Apoya al presidente, lidera comités y lo reemplaza cuando hace falta.</p></a>
+    <a class="card" href="#secretario"><h3>Secretario <small class="subtitle">de Rama, Capítulo o Grupo de Afinidad</small></h3><p class="muted">Lleva actas, documentos, correspondencia y los reportes en vTools.</p></a>
+    <a class="card" href="#tesorero"><h3>Tesorero <small class="subtitle">de Rama, Capítulo o Grupo de Afinidad</small></h3><p class="muted">Maneja el presupuesto, los ingresos, los gastos y el reclamo del rebate.</p></a>
+    <a class="card" href="#consejero"><h3>Consejero y asesores</h3><p class="muted">Profesor que asesora a la Rama; los Capítulos y Grupos tienen un asesor.</p></a>
+  </div>
+  <p class="sources">La tabla de todos los cargos con sus planes del CLE está en <a href="#capacitacion">Capacitación</a>.</p>
+</article>
+
+<article class="page" id="presidente-rama" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Presidente de Rama</h2>
+  <p class="lead">Dirige la Rama Estudiantil: gestiona un equipo de voluntarios, coordina las actividades y mantiene la Rama activa ante IEEE y ante la universidad.</p>
   <div class="photo"><img src="imagenes/medellin.webp" alt="Equipo de voluntarios IEEE"></div>
-
+  <h3>Descripción del cargo</h3>
+  <ul>
+    <li>Presidir las reuniones de la Rama y reunir al ExCom con regularidad.</li>
+    <li>Nombrar a los coordinadores de comités: programa, publicidad, membresía, finanzas y nominaciones.</li>
+    <li>Entregar el reporte anual en vTools SB Reporting.</li>
+    <li>Organizar cada año la elección de la nueva junta y reportarla en vTools Officer Reporting.</li>
+    <li>Asegurar una transición ordenada de información y documentos a la junta nueva.</li>
+    <li>Coordinar actividades con la Sección, la Región y otras Ramas cercanas.</li>
+  </ul>
+  <p class="muted">Antes de aprobar un evento, la descripción del CLE sugiere preguntar: ¿atrae miembros nuevos?, ¿tenemos el tiempo, la gente y el dinero?, ¿responde a lo que necesitan los miembros actuales?</p>
+  <h3>Checklist recomendado</h3>
+  <p>Basado en el plan de acción del CLE para este cargo. Marca lo que completes; el progreso se guarda solo en este navegador.</p>
   <div class="card">
-    <h3>Principio de voluntariado</h3>
-    <p>El trabajo en IEEE es voluntario: se sostiene con motivación, funciones claras y coordinación. Delega para que la carga no recaiga en una sola persona.</p>
-  </div>
-
-  <div class="card">
-    <h3>Responsabilidades principales</h3>
-    <ul class="rule-list">
-      <li class="ok"><span class="badge">✓</span><span><b>Dirección:</b> definir el Plan Anual con el ExCom y darle seguimiento.</span></li>
-      <li class="ok"><span class="badge">✓</span><span><b>Representación:</b> ser el enlace con la universidad, el Consejero, la Sección IEEE Colombia y el SAC de la Región 9.</span></li>
-      <li class="ok"><span class="badge">✓</span><span><b>Cumplimiento:</b> asegurar que los <a href="#reportes">reportes obligatorios</a> se entreguen a tiempo y que se respeten los estatutos de la Rama.</span></li>
-      <li class="ok"><span class="badge">✓</span><span><b>Continuidad:</b> formar a los próximos líderes y documentar todo para el siguiente empalme.</span></li>
-    </ul>
-  </div>
-
-  <p class="sources">Descripción oficial del cargo y plan de acción: <a href="https://ieee-elearning.org/totara/dashboard/index.php?id=2" target="_blank" rel="noopener">CLE · Volunteers</a> (requiere cuenta IEEE) · Más información: <a href="https://students.ieee.org/student-branches/officer-responsibilities-reporting/" target="_blank" rel="noopener">Officer responsibilities and reporting (IEEE Students)</a> · <a href="https://docs.google.com/presentation/d/15YXXP7l_PIttjnNnihzeqQ-AJXEAt3mshPUO51p7jLs/edit?usp=sharing" target="_blank" rel="noopener">Guide for Student Branch Officers (presentación)</a></p>
-</article>
-
-<!-- ============ PRIMEROS 30 DÍAS ============ -->
-<article class="page" id="primeros-30-dias" hidden>
-  <div class="kicker">Empezar</div>
-  <h2>Primeros 30 días: empalme</h2>
-  <p>El traspaso entre la junta saliente y la entrante tiene tres fases. Marca cada paso a medida que lo completes; el progreso se guarda solo en este navegador. Esta lista resume el plan oficial del CLE: <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1319" target="_blank" rel="noopener">First 30 Days</a> y <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1320" target="_blank" rel="noopener">Key Administrative Items</a> (Student Branch Chair, requiere cuenta IEEE).</p>
-
-  <div class="card">
-    <h3>A. Documentación que entrega la junta saliente</h3>
+    <h3>Primeros 30 días</h3>
     <ul class="checklist">
-      <li><label><input type="checkbox" id="e-credenciales"><span>Accesos a vTools, eNotice, sitio web, correo y redes sociales.</span></label></li>
-      <li><label><input type="checkbox" id="e-banco"><span>Cuentas bancarias y firmas autorizadas (quien deja el cargo debe salir como firmante, según MGA 9.8).</span></label></li>
-      <li><label><input type="checkbox" id="e-actas"><span>Actas, estatutos de la Rama y el Plan Anual anterior.</span></label></li>
-      <li><label><input type="checkbox" id="e-finanzas"><span>Estado financiero y comprobantes del año.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-0"><span>Recibir de la junta saliente los accesos a vTools, eNotice, sitio web, correo y redes sociales.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-1"><span>Recibir las cuentas bancarias y actualizar las firmas autorizadas (quien deja el cargo sale como firmante, Manual MGA 9.8).</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-2"><span>Recibir actas, estatutos, el Plan Anual anterior y el estado financiero.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-3"><span>Hacer una reunión de traspaso entre ambas juntas: finanzas, pendientes y demostración de vTools.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-4"><span>Presentarte con el Consejero y con el SAC de la Sección.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-5"><span>Activar tu cuenta IEEE, revisar que tu membresía esté al día y leer la descripción de tu cargo.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-6"><span>Entender cómo encaja tu unidad en IEEE y dónde está la normativa (<a href="#requisitos">Manual MGA 9.8 a 9.11</a>).</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-7"><span>Reportar a la nueva junta en <a href="https://officers.vtools.ieee.org/" target="_blank" rel="noopener">vTools Officer Reporting</a>.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-0-8"><span>Subir el Plan Anual en <a href="https://sbr.vtools.ieee.org/" target="_blank" rel="noopener">vTools SB Reporting</a> (fecha límite: 15 de marzo).</span></label></li>
     </ul>
   </div>
-
   <div class="card">
-    <h3>B. Reunión de traspaso</h3>
+    <h3>Tareas administrativas clave</h3>
     <ul class="checklist">
-      <li><label><input type="checkbox" id="e-reunion"><span>Sesión entre ambas juntas: estado financiero, procesos pendientes y demostración de vTools.</span></label></li>
-      <li><label><input type="checkbox" id="e-contactos"><span>Presentación con el Consejero y con el SAC de la Sección.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-0"><span>Conformar el ExCom, revisar los roles con la junta y reunirse con ella.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-1"><span>Decidir qué comités necesita la Rama y nombrar a sus coordinadores.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-2"><span>Hacer el presupuesto de la Rama con el Tesorero.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-3"><span>Coordinar con el Consejero.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-4"><span>Organizar reuniones con agenda y acta (reglas de Robert).</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-5"><span>Revisar la lista de miembros en <a href="https://mga.ieee.org/volunteer-hub/volunteer-tools/ou-analytics" target="_blank" rel="noopener">OU Analytics</a> y planear la campaña de renovación.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-6"><span>Planear y registrar el primer evento en <a href="https://events.vtools.ieee.org/" target="_blank" rel="noopener">vTools Events</a>.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-7"><span>Organizar premios, eventos y actividades como IEEEXtreme.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-8"><span>Coordinar actividades con la Sección y la Región.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-rama-1-9"><span>Reclutar miembros y voluntarios.</span></label></li>
     </ul>
   </div>
-
-  <div class="card">
-    <h3>C. Activación de la junta entrante</h3>
-    <ul class="checklist">
-      <li><label><input type="checkbox" id="e-officers"><span>Reportar a la nueva junta en <a href="https://officers.vtools.ieee.org/" target="_blank" rel="noopener">vTools Officer Reporting</a>.</span></label></li>
-      <li><label><input type="checkbox" id="e-plan"><span>Subir el Plan Anual en <a href="https://sbr.vtools.ieee.org/" target="_blank" rel="noopener">vTools SB Reporting</a> (fecha límite: 15 de marzo).</span></label></li>
-      <li><label><input type="checkbox" id="e-evento"><span>Planear y registrar el primer evento en <a href="https://events.vtools.ieee.org/" target="_blank" rel="noopener">vTools Events</a>.</span></label></li>
-      <li><label><input type="checkbox" id="e-ou"><span>Revisar la lista de miembros en <a href="https://mga.ieee.org/volunteer-hub/volunteer-tools/ou-analytics" target="_blank" rel="noopener">OU Analytics</a> y planear la campaña de renovación.</span></label></li>
-      <li><label><input type="checkbox" id="e-cuenta"><span>Verificar que tu cuenta IEEE y tu membresía estén activas.</span></label></li>
-      <li><label><input type="checkbox" id="e-coi"><span>Completar el formulario de Conflicto de Interés (COI), según el <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1319" target="_blank" rel="noopener">plan del CLE</a>.</span></label></li>
-      <li><label><input type="checkbox" id="e-presupuesto"><span>Armar el presupuesto del año con el Tesorero.</span></label></li>
-      <li><label><input type="checkbox" id="e-capacitacion"><span>Leer la descripción de tu cargo y la capacitación recomendada en el <a href="https://ieee-elearning.org/totara/dashboard/index.php?id=2" target="_blank" rel="noopener">CLE</a>, y ver la <a href="https://ieeetv.ieee.org/video/ieee-student-branch-officers-training" target="_blank" rel="noopener">capacitación para directivos de Rama</a>.</span></label></li>
-    </ul>
-  </div>
-
   <div class="note red">
     <span><b>No lo dejes para después:</b> el reporte de directivos, los reportes de reuniones y el Plan Anual vencen el <b>15 de marzo</b>. Si faltan, la Rama pierde el rebate. Ver <a href="#reportes">Reportes y fechas límite</a>.</span>
   </div>
+  <h3>Cursos recomendados</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=278" target="_blank" rel="noopener">Global Leadership Development</a>, <a href="https://ieee-elearning.org/course/view.php?id=281" target="_blank" rel="noopener">Attracting and Retaining New Members</a>, <a href="https://ieee-elearning.org/course/view.php?id=289" target="_blank" rel="noopener">Public Visibility and External Relationships</a>, <a href="https://ieee-elearning.org/course/view.php?id=322" target="_blank" rel="noopener">IGNITE - Get the Latest in Education from IEEE: Connect with Your Region Education Coordinator</a>, <a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE</a>, <a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics</a>, <a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA</a>, <a href="https://ieee-elearning.org/course/view.php?id=244" target="_blank" rel="noopener">Introduction to IEEE Educational Activities EAB</a>, <a href="https://ieee-elearning.org/course/view.php?id=287" target="_blank" rel="noopener">Educational Resources for Humanitarian Activities</a>, <a href="https://ieee-elearning.org/course/view.php?id=344" target="_blank" rel="noopener">IGNITE - Growing Student Communities Through Experiential Education</a>, <a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail</a>, <a href="https://ieee-elearning.org/course/view.php?id=291" target="_blank" rel="noopener">Developing Networking Skills - Personal & Professional Development</a>, <a href="https://ieee-elearning.org/course/view.php?id=288" target="_blank" rel="noopener">IGNITE - Helping Your Members Build Writing and Presentation Skills</a>. Resumen de cada uno en <a href="#cursos-cle">Cursos del CLE</a>.</p>
+  <h3>En el CLE</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=13" target="_blank" rel="noopener">Plan de acción</a> (<a href="https://ieee-elearning.org/mod/checklist/view.php?id=1319" target="_blank" rel="noopener">First 30 Days</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1320" target="_blank" rel="noopener">Key Administrative Items</a>) · <a href="https://ieee-elearning.org/totara/program/required.php?id=3" target="_blank" rel="noopener">cursos recomendados</a> · <a href="https://ieee-elearning.org/mod/page/view.php?id=1998" target="_blank" rel="noopener">descripción del cargo</a>. Requiere cuenta IEEE.</p>
+  <p class="sources">Fuente: planes de acción y descripciones de cargo del Center for Leadership Excellence (CLE), consultados en noviembre de 2026.</p>
 </article>
 
-<!-- ============ REQUISITOS ============ -->
+<article class="page" id="presidente-capitulo" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Presidente de Capítulo Técnico</h2>
+  <p class="lead">Dirige un Capítulo técnico dentro de la Rama. El Capítulo pertenece también a una Sociedad de IEEE, que es fuente de financiación, programas e información.</p>
+  <h3>Descripción del cargo</h3>
+  <ul>
+    <li>Preguntar a los estudiantes qué actividades les interesan.</li>
+    <li>Planear el año con el ExCom del Capítulo y publicar un calendario.</li>
+    <li>Reportar a la junta y las actividades del Capítulo en vTools, lo antes posible después de cada evento.</li>
+    <li>Conseguir ponentes: ingenieros locales, investigadores y profesores.</li>
+    <li>Responder tanto a la Rama como a la Sociedad técnica del Capítulo.</li>
+  </ul>
+  <p class="muted">La descripción del CLE (2018) pide reportar antes del 1 de noviembre. Hoy rige el 15 de marzo del Manual MGA 2026.</p>
+  <h3>Checklist recomendado</h3>
+  <p>Basado en el plan de acción del CLE para este cargo. Marca lo que completes; el progreso se guarda solo en este navegador.</p>
+  <div class="card">
+    <h3>Primeros 30 días</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="presidente-capitulo-0-0"><span>Entender el Capítulo dentro de IEEE y su normativa (<a href="#capitulos">Manual MGA 9.9</a>).</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-0-1"><span>Hacer el empalme con el presidente anterior del Capítulo.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-0-2"><span>Contactar al coordinador de Capítulos de tu Sociedad.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-0-3"><span>Presentarte a la junta de la Rama, al Consejero y a la Sección.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-0-4"><span>Conocer <a href="#herramientas">vTools, OU Analytics y eNotice</a>.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Tareas administrativas clave</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="presidente-capitulo-1-0"><span>Planear actividades: talleres de medio día o de día completo y competencias de la Sociedad.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-1-1"><span>Mantener informados al presidente de la Rama, a la Sección y al Consejero.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-1-2"><span>Difundir las actividades en redes sociales y Collabratec.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-1-3"><span>Reportar las actividades en vTools.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Cada año</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="presidente-capitulo-2-0"><span>Postular a <a href="#premios">premios</a>.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-2-1"><span>Promover IEEEXtreme, SPAx y STEP.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-capitulo-2-2"><span>Organizar las elecciones y reportar a la nueva junta.</span></label></li>
+    </ul>
+  </div>
+  <h3>Cursos recomendados</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE</a>, <a href="https://ieee-elearning.org/course/view.php?id=242" target="_blank" rel="noopener">Introduction to Technical Activities TAB</a>, <a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA</a>, <a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics</a>, <a href="https://ieee-elearning.org/course/view.php?id=349" target="_blank" rel="noopener">IGNITE - Building Your Technical Community in IEEE Collabratec</a>, <a href="https://ieee-elearning.org/course/view.php?id=284" target="_blank" rel="noopener">Engaging with Industry Professionals</a>, <a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail</a>. Resumen de cada uno en <a href="#cursos-cle">Cursos del CLE</a>.</p>
+  <h3>En el CLE</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=17" target="_blank" rel="noopener">Plan de acción</a> (<a href="https://ieee-elearning.org/mod/checklist/view.php?id=1677" target="_blank" rel="noopener">First 30 Days</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1678" target="_blank" rel="noopener">Key Administrative Items</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1679" target="_blank" rel="noopener">Yearly</a>) · <a href="https://ieee-elearning.org/totara/program/required.php?id=42" target="_blank" rel="noopener">cursos recomendados</a> · <a href="https://ieee-elearning.org/mod/page/view.php?id=1998" target="_blank" rel="noopener">descripción del cargo</a>. Requiere cuenta IEEE.</p>
+  <p class="sources">Fuente: planes de acción y descripciones de cargo del Center for Leadership Excellence (CLE), consultados en noviembre de 2026.</p>
+</article>
+
+<article class="page" id="presidente-grupo-afinidad" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Presidente de Grupo de Afinidad</h2>
+  <p class="lead">Es la cara visible del Grupo de Afinidad de la Rama, como Women in Engineering (WIE) o SIGHT, y organiza actividades que respondan a los intereses de sus miembros. El CLE no tiene plan de acción para Grupos de Afinidad estudiantiles; este checklist sigue el de Presidente de Capítulo de Rama.</p>
+  <h3>Descripción del cargo</h3>
+  <ul>
+    <li>Asegurar que el grupo organice actividades que respondan a lo que necesitan sus miembros.</li>
+    <li>Cumplir las políticas de IEEE y las normas locales.</li>
+    <li>Representar a los miembros ante la Rama, la Sección y la organización del grupo (por ejemplo, WIE o SIGHT).</li>
+    <li>Orientar a los demás voluntarios del grupo.</li>
+  </ul>
+  <p class="muted">Cada Grupo de Afinidad tiene dos "padres": su unidad geográfica y su organización temática, por ejemplo el comité global de WIE o de SIGHT.</p>
+  <h3>Checklist recomendado</h3>
+  <p>Basado en el plan de acción del CLE para este cargo. Marca lo que completes; el progreso se guarda solo en este navegador.</p>
+  <div class="card">
+    <h3>Primeros 30 días</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-0-0"><span>Entender el grupo dentro de IEEE y su normativa (<a href="#capitulos">Manual MGA 9.11</a>).</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-0-1"><span>Hacer el empalme con el presidente anterior del grupo.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-0-2"><span>Contactar a la organización del grupo, por ejemplo el comité de WIE o de SIGHT.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-0-3"><span>Presentarte a la junta de la Rama, al Consejero y a la Sección.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-0-4"><span>Conocer <a href="#herramientas">vTools, OU Analytics y eNotice</a>.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Tareas administrativas clave</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-1-0"><span>Planear con los miembros las actividades del año y publicar un calendario.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-1-1"><span>Mantener informados al presidente de la Rama, a la Sección y al Consejero.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-1-2"><span>Difundir las actividades en redes sociales y Collabratec.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-1-3"><span>Reportar las actividades en vTools.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-1-4"><span>Revisar los fondos de la organización del grupo, por ejemplo los <a href="https://wie.ieee.org/affinity-groups/funding/" target="_blank" rel="noopener">fondos de WIE</a>.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Cada año</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-2-0"><span>Postular a <a href="#premios">premios</a>.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-2-1"><span>Preparar a quien te va a suceder y un plan de transición.</span></label></li>
+      <li><label><input type="checkbox" id="presidente-grupo-afinidad-2-2"><span>Organizar las elecciones y reportar a la nueva junta.</span></label></li>
+    </ul>
+  </div>
+  <h3>Cursos recomendados</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=278" target="_blank" rel="noopener">Global Leadership Development</a>, <a href="https://ieee-elearning.org/course/view.php?id=282" target="_blank" rel="noopener">IGNITE - vTools Introduction</a>, <a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE</a>, <a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA</a>, <a href="https://ieee-elearning.org/course/view.php?id=241" target="_blank" rel="noopener">Introduction to IEEE Affinity Groups</a>, <a href="https://ieee-elearning.org/course/view.php?id=283" target="_blank" rel="noopener">MGA Geographic Units Financials, Best Practices and a Section Example</a>, <a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail</a>, <a href="https://ieee-elearning.org/course/view.php?id=288" target="_blank" rel="noopener">IGNITE - Helping Your Members Build Writing and Presentation Skills</a>, <a href="https://ieee-elearning.org/course/view.php?id=289" target="_blank" rel="noopener">Public Visibility and External Relationships</a>. Resumen de cada uno en <a href="#cursos-cle">Cursos del CLE</a>.</p>
+  <p class="muted">Para WIE, el CLE tiene además un <a href="https://ieee-elearning.org/totara/program/required.php?id=47" target="_blank" rel="noopener">programa de cursos</a> y un <a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=22" target="_blank" rel="noopener">plan de acción</a> pensados para Grupos de Afinidad de Sección.</p>
+  <h3>En el CLE</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=17" target="_blank" rel="noopener">Plan de acción</a> (<a href="https://ieee-elearning.org/mod/checklist/view.php?id=1677" target="_blank" rel="noopener">First 30 Days</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1678" target="_blank" rel="noopener">Key Administrative Items</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1679" target="_blank" rel="noopener">Yearly</a>) · <a href="https://ieee-elearning.org/totara/program/required.php?id=7" target="_blank" rel="noopener">cursos recomendados</a> · <a href="https://ieee-elearning.org/mod/page/view.php?id=1998" target="_blank" rel="noopener">descripción del cargo</a>. Requiere cuenta IEEE.</p>
+  <p class="sources">Fuente: planes de acción y descripciones de cargo del Center for Leadership Excellence (CLE), consultados en noviembre de 2026.</p>
+</article>
+
+<article class="page" id="vicepresidente" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Vicepresidente <small class="subtitle">de Rama, Capítulo o Grupo de Afinidad</small></h2>
+  <p class="lead">Trabaja de cerca con el presidente para dirigir la unidad, involucra a los miembros y asume la presidencia cuando el presidente no está. Esta página sirve para el vicepresidente de una Rama, de un Capítulo o de un Grupo de Afinidad.</p>
+  <h3>Descripción del cargo</h3>
+  <ul>
+    <li>Presidir los comités de programa y de membresía.</li>
+    <li>Organizar visitas técnicas y eventos especiales.</li>
+    <li>Participar en las reuniones del ExCom.</li>
+    <li>Dar seguimiento a los compromisos de los comités.</li>
+    <li>Asumir las funciones del presidente cuando no está o cuando se lo pide.</li>
+  </ul>
+  <h3>Checklist recomendado</h3>
+  <p>Basado en el plan de acción del CLE para este cargo. Marca lo que completes; el progreso se guarda solo en este navegador.</p>
+  <div class="card">
+    <h3>Primeros 30 días</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="vicepresidente-0-0"><span>Activar tu cuenta IEEE, revisar que tu membresía esté al día y leer la descripción de tu cargo.</span></label></li>
+      <li><label><input type="checkbox" id="vicepresidente-0-1"><span>Entender cómo encaja tu unidad en IEEE y dónde está la normativa (<a href="#requisitos">Manual MGA 9.8 a 9.11</a>).</span></label></li>
+      <li><label><input type="checkbox" id="vicepresidente-0-2"><span>Conocer a la junta y hacer el empalme con quien tuvo el cargo antes.</span></label></li>
+      <li><label><input type="checkbox" id="vicepresidente-0-3"><span>Familiarizarte con los <a href="#reportes">reportes en vTools</a>: Plan Anual, directivos y eventos.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Tareas administrativas clave</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="vicepresidente-1-0"><span>Apoyar al presidente en la definición de metas, las reuniones del ExCom y el presupuesto.</span></label></li>
+      <li><label><input type="checkbox" id="vicepresidente-1-1"><span>Apoyar la organización de reuniones: agenda, actas y reglas de Robert.</span></label></li>
+      <li><label><input type="checkbox" id="vicepresidente-1-2"><span>Impulsar actividades: <a href="#premios">premios</a>, IEEEXtreme, concursos de artículos y eventos sociales.</span></label></li>
+      <li><label><input type="checkbox" id="vicepresidente-1-3"><span>Reclutar voluntarios.</span></label></li>
+    </ul>
+  </div>
+  <h3>Cursos recomendados</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=281" target="_blank" rel="noopener">Attracting and Retaining New Members</a>, <a href="https://ieee-elearning.org/course/view.php?id=289" target="_blank" rel="noopener">Public Visibility and External Relationships</a>, <a href="https://ieee-elearning.org/course/view.php?id=322" target="_blank" rel="noopener">IGNITE - Get the Latest in Education from IEEE: Connect with Your Region Education Coordinator</a>, <a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE</a>, <a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA</a>, <a href="https://ieee-elearning.org/course/view.php?id=244" target="_blank" rel="noopener">Introduction to IEEE Educational Activities EAB</a>, <a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics</a>, <a href="https://ieee-elearning.org/course/view.php?id=287" target="_blank" rel="noopener">Educational Resources for Humanitarian Activities</a>, <a href="https://ieee-elearning.org/course/view.php?id=344" target="_blank" rel="noopener">IGNITE - Growing Student Communities Through Experiential Education</a>, <a href="https://ieee-elearning.org/course/view.php?id=291" target="_blank" rel="noopener">Developing Networking Skills - Personal & Professional Development</a>, <a href="https://ieee-elearning.org/course/view.php?id=288" target="_blank" rel="noopener">IGNITE - Helping Your Members Build Writing and Presentation Skills</a>, <a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail</a>. Resumen de cada uno en <a href="#cursos-cle">Cursos del CLE</a>.</p>
+  <h3>En el CLE</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=14" target="_blank" rel="noopener">Plan de acción</a> (<a href="https://ieee-elearning.org/mod/checklist/view.php?id=1673" target="_blank" rel="noopener">First 30 Days</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1674" target="_blank" rel="noopener">Key Administrative Items</a>) · <a href="https://ieee-elearning.org/totara/program/required.php?id=39" target="_blank" rel="noopener">cursos recomendados</a> · <a href="https://ieee-elearning.org/mod/page/view.php?id=1998" target="_blank" rel="noopener">descripción del cargo</a>. Requiere cuenta IEEE.</p>
+  <p class="sources">Fuente: planes de acción y descripciones de cargo del Center for Leadership Excellence (CLE), consultados en noviembre de 2026.</p>
+</article>
+
+<article class="page" id="secretario" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Secretario <small class="subtitle">de Rama, Capítulo o Grupo de Afinidad</small></h2>
+  <p class="lead">Gestiona y reporta las actividades administrativas: documentos, actas, correspondencia y apoyo a las reuniones. Esta página sirve para el secretario de una Rama, de un Capítulo o de un Grupo de Afinidad.</p>
+  <h3>Descripción del cargo</h3>
+  <ul>
+    <li>Reportar la elección de la nueva junta y las actividades de la unidad.</li>
+    <li>Llevar el registro de reuniones y actividades.</li>
+    <li>Mantener la lista de miembros y de integrantes de cada comité.</li>
+    <li>Archivar la correspondencia.</li>
+    <li>Preparar con el ExCom el plan del año y publicar el calendario de eventos.</li>
+    <li>Velar por que las actividades sigan los estatutos.</li>
+    <li>Entregar todos los registros a quien te suceda.</li>
+  </ul>
+  <p class="muted">En unidades pequeñas, el cargo de Secretario puede combinarse con otro, por ejemplo con el de Tesorero.</p>
+  <h3>Checklist recomendado</h3>
+  <p>Basado en el plan de acción del CLE para este cargo. Marca lo que completes; el progreso se guarda solo en este navegador.</p>
+  <div class="card">
+    <h3>Primeros 30 días</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="secretario-0-0"><span>Activar tu cuenta IEEE, revisar que tu membresía esté al día y leer la descripción de tu cargo.</span></label></li>
+      <li><label><input type="checkbox" id="secretario-0-1"><span>Entender cómo encaja tu unidad en IEEE y dónde está la normativa (<a href="#requisitos">Manual MGA 9.8 a 9.11</a>).</span></label></li>
+      <li><label><input type="checkbox" id="secretario-0-2"><span>Conocer a la junta y hacer el empalme con quien tuvo el cargo antes.</span></label></li>
+      <li><label><input type="checkbox" id="secretario-0-3"><span>Familiarizarte con los <a href="#reportes">reportes en vTools</a>: Plan Anual, directivos y eventos.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Tareas administrativas clave</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="secretario-1-0"><span>Mantener el registro de voluntarios, las actas y los documentos no financieros.</span></label></li>
+      <li><label><input type="checkbox" id="secretario-1-1"><span>Enviar las convocatorias a las reuniones del ExCom.</span></label></li>
+      <li><label><input type="checkbox" id="secretario-1-2"><span>Preparar la agenda de cada reunión y convertirla en acta.</span></label></li>
+      <li><label><input type="checkbox" id="secretario-1-3"><span>Mantener el calendario (hay un <a href="https://students.ieee.org/student-branch-calendar/" target="_blank" rel="noopener">calendario de ejemplo</a> de IEEE Students).</span></label></li>
+      <li><label><input type="checkbox" id="secretario-1-4"><span>Reportar cada evento en <a href="https://events.vtools.ieee.org/" target="_blank" rel="noopener">vTools Events</a> (ver <a href="#reportes">Reportes</a>).</span></label></li>
+    </ul>
+  </div>
+  <h3>Cursos recomendados</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE</a>, <a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA</a>, <a href="https://ieee-elearning.org/course/view.php?id=282" target="_blank" rel="noopener">IGNITE - vTools Introduction</a>, <a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics</a>, <a href="https://ieee-elearning.org/course/view.php?id=288" target="_blank" rel="noopener">IGNITE - Helping Your Members Build Writing and Presentation Skills</a>, <a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail</a>. Resumen de cada uno en <a href="#cursos-cle">Cursos del CLE</a>.</p>
+  <h3>En el CLE</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=15" target="_blank" rel="noopener">Plan de acción</a> (<a href="https://ieee-elearning.org/mod/checklist/view.php?id=1667" target="_blank" rel="noopener">First 30 Days</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1668" target="_blank" rel="noopener">Key Administrative Items</a>) · <a href="https://ieee-elearning.org/totara/program/required.php?id=40" target="_blank" rel="noopener">cursos recomendados</a> · <a href="https://ieee-elearning.org/mod/page/view.php?id=1998" target="_blank" rel="noopener">descripción del cargo</a>. Requiere cuenta IEEE.</p>
+  <p class="sources">Fuente: planes de acción y descripciones de cargo del Center for Leadership Excellence (CLE), consultados en noviembre de 2026.</p>
+</article>
+
+<article class="page" id="tesorero" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Tesorero <small class="subtitle">de Rama, Capítulo o Grupo de Afinidad</small></h2>
+  <p class="lead">Es el responsable financiero: presupuesto, ingresos, gastos y reportes. Esta página sirve para el tesorero de una Rama, de un Capítulo o de un Grupo de Afinidad. En Colombia, el manejo del dinero de los Capítulos se pacta entre la Rama y el Capítulo; la recomendación es que todo pase por la Rama.</p>
+  <h3>Descripción del cargo</h3>
+  <ul>
+    <li>Recibir del tesorero saliente todos los registros financieros, incluido el último presupuesto.</li>
+    <li>Elaborar el presupuesto con la junta y la Sección, y hacerle seguimiento.</li>
+    <li>Mantener los registros al día y verificar cada ingreso y cada gasto.</li>
+    <li>Asistir a las reuniones del ExCom e informar el estado financiero.</li>
+    <li>Guardar las facturas y los comprobantes: IEEE puede solicitarlos.</li>
+    <li>Buscar fuentes adicionales de fondos y orientar a Capítulos y Grupos de Afinidad sobre cómo pedir fondos de la Rama.</li>
+  </ul>
+  <h3>Checklist recomendado</h3>
+  <p>Basado en el plan de acción del CLE para este cargo. Marca lo que completes; el progreso se guarda solo en este navegador.</p>
+  <div class="card">
+    <h3>Primeros 30 días</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="tesorero-0-0"><span>Activar tu cuenta IEEE, revisar que tu membresía esté al día y leer la descripción de tu cargo.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-0-1"><span>Entender cómo encaja tu unidad en IEEE y dónde está la normativa (<a href="#requisitos">Manual MGA 9.8 a 9.11</a>).</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-0-2"><span>Conocer a la junta y hacer el empalme con quien tuvo el cargo antes.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-0-3"><span>Familiarizarte con los <a href="#reportes">reportes en vTools</a>: Plan Anual, directivos y eventos.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-0-4"><span>Revisar el presupuesto y las cuentas del año anterior.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-0-5"><span>Cambiar el acceso a las cuentas: retirar al tesorero anterior y agregar al nuevo.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-0-6"><span>Recibir comprobantes, documentación y facturas pendientes.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Tareas administrativas clave</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="tesorero-1-0"><span>Elaborar el presupuesto con la junta y la Sección, y hacerle seguimiento.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-1-1"><span>Cumplir las normas de IEEE y los estatutos.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-1-2"><span>Reclamar el rebate de la Rama ante la Sección (ver <a href="#fondos">cómo reclamar el rebate</a>) y guardar las facturas de cómo se usó.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-1-3"><span>Orientar a los Capítulos y Grupos de Afinidad sobre cómo pedir fondos de la Rama.</span></label></li>
+      <li><label><input type="checkbox" id="tesorero-1-4"><span>Buscar <a href="#fondos">fuentes de financiación</a>: Sección, Capítulos, Región, Young Professionals y patrocinadores.</span></label></li>
+    </ul>
+  </div>
+  <h3>Cursos recomendados</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=283" target="_blank" rel="noopener">MGA Geographic Units Financials, Best Practices and a Section Example</a>, <a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE</a>, <a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA</a>, <a href="https://ieee-elearning.org/course/view.php?id=282" target="_blank" rel="noopener">IGNITE - vTools Introduction</a>, <a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics</a>, <a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail</a>. Resumen de cada uno en <a href="#cursos-cle">Cursos del CLE</a>.</p>
+  <p>Curso del CLE para tesoreros: <a href="https://ieee-elearning.org/course/view.php?id=459" target="_blank" rel="noopener">MGA Unit Financial Reporting &amp; Treasurer Training</a>.</p>
+  <h3>En el CLE</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=16" target="_blank" rel="noopener">Plan de acción</a> (<a href="https://ieee-elearning.org/mod/checklist/view.php?id=1670" target="_blank" rel="noopener">First 30 Days</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1671" target="_blank" rel="noopener">Key Administrative Items</a>) · <a href="https://ieee-elearning.org/totara/program/required.php?id=41" target="_blank" rel="noopener">cursos recomendados</a> · <a href="https://ieee-elearning.org/mod/page/view.php?id=1998" target="_blank" rel="noopener">descripción del cargo</a>. Requiere cuenta IEEE.</p>
+  <p class="sources">Fuente: planes de acción y descripciones de cargo del Center for Leadership Excellence (CLE), consultados en noviembre de 2026.</p>
+</article>
+
+<article class="page" id="consejero" hidden>
+  <div class="kicker">Cargos</div>
+  <h2>Consejero y asesores</h2>
+  <p class="lead">Cada Rama tiene un Consejero (Branch Counselor): un profesor miembro de IEEE que la asesora y facilita su relación con la universidad, la Sección, la Región y IEEE. Lo nombra el presidente de la Sección, normalmente por 2 años (Manual MGA 9.8). En la práctica, los estudiantes buscan al profesor para que haga parte de la junta; también pueden pedirle una recomendación a la Sección. Los Capítulos y Grupos de Afinidad tienen un asesor (Advisor) con un papel parecido (Manual MGA 9.9 y 9.11).</p>
+  <h3>Descripción del cargo</h3>
+  <ul>
+    <li>Servir de enlace entre la Rama, la Sección y la universidad.</li>
+    <li>Promover IEEE ante la industria local.</li>
+    <li>Involucrar a los voluntarios de la Sección (presidente, SSAC y SSR) en las actividades de la Rama.</li>
+    <li>Invitar a colegas a dar demostraciones técnicas, talleres de desarrollo profesional y visitas a empresas.</li>
+    <li>Apoyar y reconocer a los estudiantes voluntarios.</li>
+  </ul>
+  <h3>Checklist recomendado</h3>
+  <p>Basado en el plan de acción del CLE para este cargo. Marca lo que completes; el progreso se guarda solo en este navegador.</p>
+  <div class="card">
+    <h3>Primeros 30 días</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="consejero-0-0"><span>Conectarse con la Sección.</span></label></li>
+      <li><label><input type="checkbox" id="consejero-0-1"><span>Revisar las convocatorias de cargos voluntarios disponibles.</span></label></li>
+      <li><label><input type="checkbox" id="consejero-0-2"><span>Conocer a la junta de la Rama y su Plan Anual.</span></label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>Tareas administrativas clave</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" id="consejero-1-0"><span>Mantener la membresía IEEE al día y revisar el correo de IEEE.</span></label></li>
+      <li><label><input type="checkbox" id="consejero-1-1"><span>Apoyar las campañas de membresía.</span></label></li>
+      <li><label><input type="checkbox" id="consejero-1-2"><span>Coordinar con la Sección y asistir a sus actividades.</span></label></li>
+      <li><label><input type="checkbox" id="consejero-1-3"><span>Apoyar al ExCom y la preparación del Plan Anual.</span></label></li>
+      <li><label><input type="checkbox" id="consejero-1-4"><span>Ayudar en la gestión de eventos y proyectos.</span></label></li>
+    </ul>
+  </div>
+  <h3>Cursos recomendados</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=322" target="_blank" rel="noopener">IGNITE - Get the Latest in Education from IEEE: Connect with Your Region Education Coordinator</a>, <a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE</a>, <a href="https://ieee-elearning.org/course/view.php?id=244" target="_blank" rel="noopener">Introduction to IEEE Educational Activities EAB</a>, <a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA</a>, <a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics</a>, <a href="https://ieee-elearning.org/course/view.php?id=284" target="_blank" rel="noopener">Engaging with Industry Professionals</a>, <a href="https://ieee-elearning.org/course/view.php?id=323" target="_blank" rel="noopener">IGNITE - Dronefest: Engaging the local community for impact</a>, <a href="https://ieee-elearning.org/course/view.php?id=288" target="_blank" rel="noopener">IGNITE - Helping Your Members Build Writing and Presentation Skills</a>, <a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail</a>. Resumen de cada uno en <a href="#cursos-cle">Cursos del CLE</a>.</p>
+  <p>Video: <a href="https://ieeetv.ieee.org/video/ieee-student-branch-counselor-training" target="_blank" rel="noopener">Student Branch Counselor Training (IEEE.tv)</a>.</p>
+  <h3>En el CLE</h3>
+  <p><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=18" target="_blank" rel="noopener">Plan de acción</a> (<a href="https://ieee-elearning.org/mod/checklist/view.php?id=1378" target="_blank" rel="noopener">First 30 Days</a> · <a href="https://ieee-elearning.org/mod/checklist/view.php?id=1344" target="_blank" rel="noopener">Key Administrative Items</a>) · <a href="https://ieee-elearning.org/totara/program/required.php?id=43" target="_blank" rel="noopener">cursos recomendados</a> · <a href="https://ieee-elearning.org/mod/page/view.php?id=1998" target="_blank" rel="noopener">descripción del cargo</a>. Requiere cuenta IEEE.</p>
+  <p class="sources">Fuente: planes de acción y descripciones de cargo del Center for Leadership Excellence (CLE), consultados en noviembre de 2026.</p>
+</article>
+
+<article class="page" id="operacion" hidden>
+  <div class="kicker">Operación</div>
+  <h2>Cómo operar una Rama o Capítulo</h2>
+  <p>Lo que toda la junta debe conocer para mantener la unidad activa y en regla.</p>
+  <div class="grid2">
+    <a class="card" href="#requisitos"><h3>Requisitos de una Rama</h3><p class="muted">Mínimo de miembros, actividades, Consejero y cuándo se disuelve una Rama.</p></a>
+    <a class="card" href="#reportes"><h3>Reportes y fechas límite</h3><p class="muted">Qué se reporta en vTools y cuándo: todo vence el 15 de marzo.</p></a>
+    <a class="card" href="#membresia"><h3>Año de membresía</h3><p class="muted">El ciclo anual de renovación y cómo planear tus campañas.</p></a>
+    <a class="card" href="#excom"><h3>ExCom y funciones</h3><p class="muted">Cómo se reparte el trabajo en la junta.</p></a>
+    <a class="card" href="#capitulos"><h3>Capítulos y Grupos de Afinidad</h3><p class="muted">Cómo se crean y qué necesitan para mantenerse activos.</p></a>
+    <a class="card" href="#elecciones"><h3>Elecciones</h3><p class="muted">Cronograma sugerido y reporte de la nueva junta.</p></a>
+  </div>
+</article>
+
 <article class="page" id="requisitos" hidden>
-  <div class="kicker">Operación de la Rama</div>
+  <div class="kicker">Operación</div>
   <h2>Requisitos de una Rama Estudiantil</h2>
   <p>Una Rama Estudiantil es una unidad de IEEE dentro de una Sección (en nuestro caso, la Sección Colombia). Para mantenerse activa debe cumplir los requisitos de la sección 9.8 del Manual de Operaciones de MGA.</p>
 
@@ -209,16 +566,14 @@
   <p class="sources">Fuente: <a href="https://mga.ieee.org/board-committees/operations-manual" target="_blank" rel="noopener">Manual de Operaciones de MGA</a>, sección 9.8 (edición de junio de 2026).</p>
 </article>
 
-<!-- ============ REPORTES ============ -->
 <article class="page" id="reportes" hidden>
-  <div class="kicker">Operación de la Rama</div>
+  <div class="kicker">Operación</div>
   <h2>Reportes y fechas límite</h2>
   <p>Cumplir estos reportes mantiene la Rama activa y le da derecho al <a href="#fondos">rebate anual</a>.</p>
 
   <div class="table-wrap">
     <table class="spec">
       <tr><th>Fecha límite</th><th>Qué se reporta</th><th>Dónde</th></tr>
-      <tr><td><b>28 de febrero</b></td><td>Reporte financiero del año anterior</td><td>A la Sección (unidad padre)</td></tr>
       <tr><td><b>15 de marzo</b></td><td>Directivos vigentes</td><td><a href="https://officers.vtools.ieee.org/" target="_blank" rel="noopener">vTools Officer Reporting</a></td></tr>
       <tr><td><b>15 de marzo</b></td><td>Reuniones y eventos del año anterior</td><td><a href="https://events.vtools.ieee.org/" target="_blank" rel="noopener">vTools Events</a></td></tr>
       <tr><td><b>15 de marzo</b></td><td>Plan Anual de la Rama</td><td><a href="https://sbr.vtools.ieee.org/" target="_blank" rel="noopener">vTools SB Reporting</a></td></tr>
@@ -227,19 +582,35 @@
   </div>
 
   <div class="note">
+    <span>En Colombia las Ramas no envían un reporte financiero a la Sección. Guarda las facturas de todos los gastos: IEEE puede solicitarlas.</span>
+  </div>
+  <div class="note">
     <span><b>Buena práctica:</b> reporta cada evento en vTools el mismo mes en que ocurre, no en marzo. Las actividades de este año cuentan para el rebate del año siguiente.</span>
   </div>
 
   <p class="sources">Fuentes: <a href="https://mga.ieee.org/board-committees/operations-manual" target="_blank" rel="noopener">Manual de Operaciones de MGA</a>, secciones 3.4 y 9.8 · <a href="https://r9.ieee.org/sac/sb-annual-plan/" target="_blank" rel="noopener">Plan Anual de la Rama (R9 SAC)</a> · <a href="https://r9.ieee.org/sac/vtools-events/" target="_blank" rel="noopener">Cómo reportar eventos en vTools (R9 SAC)</a> · Videos: <a href="https://www.youtube.com/watch?v=Fy0n_PJrqDY" target="_blank" rel="noopener">Reporta el Plan Anual</a>, <a href="https://www.youtube.com/watch?v=aSZcwJznFPI" target="_blank" rel="noopener">vTools Officer Reporting</a></p>
 </article>
 
-<!-- ============ MEMBRESÍA ============ -->
 <article class="page" id="membresia" hidden>
-  <div class="kicker">Operación de la Rama</div>
+  <div class="kicker">Operación</div>
   <h2>Año de membresía IEEE</h2>
-  <p>La membresía IEEE va del 1 de enero al 31 de diciembre. Todo el ExCom debe conocer este ciclo para planear las campañas de renovación: si los miembros no renuevan, la Rama puede quedar por debajo del mínimo de 12.</p>
+  <p>La membresía IEEE se renueva cada año. Todo el ExCom debe conocer este calendario para planear las campañas de renovación: si los miembros no renuevan, la Rama puede quedar por debajo del mínimo de 12. La membresía estudiantil cuesta <b>US$14</b> al año en Colombia; confirma el valor al pagar en la página de IEEE.</p>
 
   <div class="photo plain"><img src="imagenes/ciclo-membresias-wheel.webp" loading="lazy" alt="Infografía del ciclo anual de membresías IEEE"></div>
+
+  <div class="table-wrap">
+    <table class="spec">
+      <tr><th>Mes</th><th>Qué pasa</th></tr>
+      <tr><td><b>Septiembre</b></td><td>Empieza el año de membresía y abre la renovación para el año siguiente. Quien se une entre septiembre y diciembre recibe beneficios hasta el final del año siguiente.</td></tr>
+      <tr><td><b>Diciembre</b></td><td>Cierra el año calendario y se calculan las estadísticas de miembros. Con esas cifras se calcula el rebate de la Rama.</td></tr>
+      <tr><td><b>Febrero</b></td><td>Se desactivan los servicios de quienes no renovaron.</td></tr>
+      <tr><td><b>Marzo</b></td><td>Mitad del año de membresía: empieza la recuperación de miembros atrasados. Los miembros nuevos que se unen entre el 1 de marzo y el 15 de agosto pagan media cuota.</td></tr>
+      <tr><td><b>Agosto</b></td><td>Cierra el año de membresía.</td></tr>
+    </table>
+  </div>
+  <div class="note">
+    <span><b>Buena práctica:</b> haz tu campaña de renovación entre septiembre y diciembre, para que tus miembros cuenten en las estadísticas de fin de año.</span>
+  </div>
 
   <ul class="reslist">
     <li><a href="https://www.ieee.org/membership/join" target="_blank" rel="noopener">Unirse o renovar (precios vigentes) <span class="go">→</span></a></li>
@@ -250,20 +621,19 @@
   </ul>
 </article>
 
-<!-- ============ EXCOM ============ -->
 <article class="page" id="excom" hidden>
-  <div class="kicker">Operación de la Rama</div>
+  <div class="kicker">Operación</div>
   <h2>Comité Ejecutivo (ExCom) y funciones</h2>
-  <p>Repartir bien las tareas evita duplicar trabajo y asegura que la Rama siga funcionando cuando alguien se va. MGA exige como mínimo Presidente, Vicepresidente, Secretario y Tesorero (o Secretario-Tesorero), todos miembros Student o Graduate Student al día. Los presidentes de los Capítulos de la Rama también hacen parte del ExCom.</p>
+  <p>Repartir bien las tareas evita duplicar trabajo y asegura que la Rama siga funcionando cuando alguien se va. MGA exige como mínimo Presidente, Vicepresidente, Secretario y Tesorero (o Secretario-Tesorero), todos miembros Student o Graduate Student al día. Los presidentes de los Capítulos de la Rama también hacen parte del ExCom. La Sección recomienda periodos de 1 año y no más de 2 años en el mismo cargo.</p>
 
   <div class="table-wrap">
     <table class="spec">
       <tr><th>Cargo</th><th>Responsabilidad</th><th>Impacto</th></tr>
-      <tr><td><b>Presidente</b> (Chair)</td><td>Dirección general, representación y seguimiento de compromisos.</td><td>Coordina el Plan Anual.</td></tr>
-      <tr><td><b>Vicepresidente</b> (Vice Chair)</td><td>Coordina comités y da seguimiento a Capítulos y Grupos de Afinidad.</td><td>Soporte operativo y sucesión.</td></tr>
-      <tr><td><b>Secretario</b> (Secretary)</td><td>Actas, archivo, correspondencia y reportes en vTools.</td><td>Mantiene el historial de la Rama.</td></tr>
-      <tr><td><b>Tesorero</b> (Treasurer)</td><td>Presupuesto, ingresos, egresos, comprobantes y reporte financiero anual.</td><td>Salud financiera y rebate.</td></tr>
-      <tr><td><b>Consejero</b> (Branch Counselor)</td><td>Profesor miembro de IEEE que acompaña y asesora a la Rama. No es un cargo electo: lo nombra el presidente de la Sección.</td><td>Respaldo institucional.</td></tr>
+      <tr><td><b><a href="#presidente-rama">Presidente</a></b> (Chair)</td><td>Dirección general, representación y seguimiento de compromisos.</td><td>Coordina el Plan Anual.</td></tr>
+      <tr><td><b><a href="#vicepresidente">Vicepresidente</a></b> (Vice Chair)</td><td>Coordina comités y da seguimiento a Capítulos y Grupos de Afinidad.</td><td>Soporte operativo y sucesión.</td></tr>
+      <tr><td><b><a href="#secretario">Secretario</a></b> (Secretary)</td><td>Actas, archivo, correspondencia y reportes en vTools.</td><td>Mantiene el historial de la Rama.</td></tr>
+      <tr><td><b><a href="#tesorero">Tesorero</a></b> (Treasurer)</td><td>Presupuesto, ingresos, egresos, comprobantes y reporte financiero anual.</td><td>Salud financiera y rebate.</td></tr>
+      <tr><td><b><a href="#consejero">Consejero</a></b> (Branch Counselor)</td><td>Profesor miembro de IEEE que acompaña y asesora a la Rama. No es un cargo electo: lo nombra el presidente de la Sección.</td><td>Respaldo institucional.</td></tr>
     </table>
   </div>
 
@@ -274,11 +644,10 @@
   <p class="sources">Plan de acción y cursos de cada cargo: <a href="#capacitacion">tabla de cargos en el CLE</a> · <a href="https://ieee-elearning.org/totara/dashboard/index.php?id=2" target="_blank" rel="noopener">CLE · Volunteers</a> · Requisitos de cada cargo: <a href="https://mga.ieee.org/resources-operations/geographic-unit/reporting-rebates/officer-forms/officers" target="_blank" rel="noopener">Officer qualifications (MGA)</a> · Formación del tesorero: <a href="https://ieee-elearning.org/course/view.php?id=459" target="_blank" rel="noopener">MGA Unit Financial Reporting &amp; Treasurer Training</a></p>
 </article>
 
-<!-- ============ CAPÍTULOS ============ -->
 <article class="page" id="capitulos" hidden>
-  <div class="kicker">Operación de la Rama</div>
+  <div class="kicker">Operación</div>
   <h2>Capítulos y Grupos de Afinidad</h2>
-  <p>Dentro de una Rama se pueden crear <b>Capítulos Técnicos</b> (ligados a una Sociedad, por ejemplo Computer Society o RAS) y <b>Grupos de Afinidad</b> (por ejemplo WIE). Funcionan como comités de la Rama.</p>
+  <p>Dentro de una Rama se pueden crear <b>Capítulos Técnicos</b> (ligados a una Sociedad, por ejemplo Computer Society o RAS) y <b>Grupos de Afinidad</b> (por ejemplo WIE o SIGHT). Funcionan como comités de la Rama.</p>
 
   <div class="table-wrap">
     <table class="spec">
@@ -298,28 +667,42 @@
   <p class="sources">Fuente: <a href="https://mga.ieee.org/board-committees/operations-manual" target="_blank" rel="noopener">Manual de Operaciones de MGA</a>, secciones 9.9 y 9.11 (edición de junio de 2026).</p>
 </article>
 
-<!-- ============ ELECCIONES ============ -->
 <article class="page" id="elecciones" hidden>
-  <div class="kicker">Operación de la Rama</div>
+  <div class="kicker">Operación</div>
   <h2>Elecciones</h2>
-  <p>Las elecciones de la Rama se rigen por sus estatutos. Deben ser transparentes y quedar reportadas en vTools al terminar. El cronograma sugerido sigue el modelo de la sección 9.13 del Manual MGA (escrito para Secciones): el proceso arranca antes del 1 de agosto y termina antes del 15 de diciembre.</p>
+  <p>Las elecciones de la Rama se rigen por sus estatutos. Deben ser transparentes y quedar reportadas en vTools al terminar. El SAC Colombia recomienda elegir antes de terminar el año, para conocer a la nueva junta y hacer el empalme con tiempo. La Sección recomienda periodos de 1 año y no más de 2 años en el mismo cargo. El cronograma sugerido sigue el modelo de la sección 9.13 del Manual MGA (escrito para Secciones): el proceso arranca antes del 1 de agosto y termina antes del 15 de diciembre.</p>
 
   <div class="card">
     <h3>Cronograma sugerido</h3>
     <ul class="rule-list">
-      <li><span class="badge">1</span><span><b>Antes del 1 de agosto:</b> conformar el comité electoral y preparar la convocatoria.</span></li>
+      <li><span class="badge">1</span><span><b>Antes del 1 de agosto:</b> conformar un consejo de expresidentes de la Rama que acompañe el proceso, y preparar la convocatoria.</span></li>
       <li><span class="badge">2</span><span><b>Agosto a septiembre:</b> postulaciones abiertas (se recomiendan 30 días).</span></li>
-      <li><span class="badge">3</span><span><b>Noviembre:</b> votación de al menos 2 semanas. Puedes usar <a href="https://vtools.ieee.org/" target="_blank" rel="noopener">vTools Voting</a>.</span></li>
-      <li><span class="badge">4</span><span><b>Diciembre:</b> publicar resultados, iniciar el <a href="#primeros-30-dias">empalme</a> y reportar la nueva junta en <a href="https://officers.vtools.ieee.org/" target="_blank" rel="noopener">vTools Officer Reporting</a>.</span></li>
+      <li><span class="badge">3</span><span><b>Noviembre:</b> votación de al menos 2 semanas en <a href="https://vtools.ieee.org/" target="_blank" rel="noopener">vTools Voting</a>, la herramienta oficial recomendada.</span></li>
+      <li><span class="badge">4</span><span><b>Diciembre:</b> publicar resultados, iniciar el <a href="#presidente-rama">empalme</a> y reportar la nueva junta en <a href="https://officers.vtools.ieee.org/" target="_blank" rel="noopener">vTools Officer Reporting</a>.</span></li>
     </ul>
   </div>
 
   <div class="note blue">
-    <span>Este cronograma es una recomendación. Si los estatutos de tu Rama fijan otras fechas, siguen valiendo los estatutos.</span>
+    <span>Este cronograma es una recomendación del SAC Colombia. Si los estatutos de tu Rama fijan otras fechas, siguen valiendo los estatutos.</span>
   </div>
 </article>
 
-<!-- ============ HERRAMIENTAS ============ -->
+<article class="page" id="recursos" hidden>
+  <div class="kicker">Recursos</div>
+  <h2>Recursos útiles</h2>
+  <p>Herramientas, fondos, formación y contactos para el día a día.</p>
+  <div class="grid2">
+    <a class="card" href="#herramientas"><h3>Herramientas digitales</h3><p class="muted">vTools, OU Analytics, eNotice, Collabratec y hosting web.</p></a>
+    <a class="card" href="#fondos"><h3>Rebates y financiación</h3><p class="muted">El rebate anual, cómo reclamarlo en Colombia y otras fuentes de fondos.</p></a>
+    <a class="card" href="#premios"><h3>Premios y concursos</h3><p class="muted">Premios del SAC Colombia en la RNR, premios regionales y de MGA.</p></a>
+    <a class="card" href="#capacitacion"><h3>Capacitación</h3><p class="muted">El CLE, los planes de acción por cargo y videos.</p></a>
+    <a class="card" href="#cursos-cle"><h3>Cursos del CLE</h3><p class="muted">Resumen de los 24 cursos recomendados.</p></a>
+    <a class="card" href="#marca"><h3>Marca y comunicación</h3><p class="muted">Plantillas de marca, correo @ieee.org y sitio web.</p></a>
+    <a class="card" href="#contacto"><h3>¿A quién preguntar?</h3><p class="muted">Consejero, Sección Colombia y Región 9.</p></a>
+    <a class="card" href="#enlaces"><h3>Todos los enlaces</h3><p class="muted">Normativa, vTools, Región 9 y Colombia.</p></a>
+  </div>
+</article>
+
 <article class="page" id="herramientas" hidden>
   <div class="kicker">Recursos</div>
   <h2>Herramientas digitales</h2>
@@ -336,7 +719,6 @@
   <p class="sources">Videos: <a href="https://www.youtube.com/watch?v=J-lmVDQN2OA" target="_blank" rel="noopener">vTools en cinco minutos</a> · <a href="https://www.youtube.com/watch?v=wKNhzt1AGAQ" target="_blank" rel="noopener">Effective Management with vTools</a> · <a href="https://www.youtube.com/watch?v=YOUVGOI2g9M" target="_blank" rel="noopener">OU Analytics for Effective Leadership</a> · <a href="https://www.youtube.com/watch?v=hmPPe-u_TtQ" target="_blank" rel="noopener">Cuántos miembros tiene mi unidad (OU Analytics)</a></p>
 </article>
 
-<!-- ============ FONDOS ============ -->
 <article class="page" id="fondos" hidden>
   <div class="kicker">Recursos</div>
   <h2>Rebates y financiación</h2>
@@ -350,7 +732,22 @@
   </ul>
   <p>El rebate de un año se calcula con la actividad del año anterior. Detalles: <a href="https://r9.ieee.org/sac/rebates/" target="_blank" rel="noopener">Rebates (R9 SAC)</a>.</p>
 
+  <h3>Cómo reclamar el rebate en Colombia</h3>
+  <p>La Sección Colombia entrega el rebate de dos maneras:</p>
+  <ol>
+    <li><b>Pago de membresías</b> a IEEE o a Sociedades de IEEE.</li>
+    <li><b>Consignación en efectivo</b> mediante cuenta de cobro. Se le aplica retención en la fuente y cuenta como ingreso ante la DIAN para quien lo recibe (tenlo en cuenta en la declaración de renta del año siguiente, si declaras).</li>
+  </ol>
+  <p>Para el pago en efectivo, envía estos documentos a <a href="mailto:sac@ieee.org.co">sac@ieee.org.co</a> y <a href="mailto:tesoreria@ieee.org.co">tesoreria@ieee.org.co</a>:</p>
+  <ul class="checklist">
+    <li><label><input type="checkbox" id="rebate-0"><span><a href="https://docs.google.com/document/d/1RzEXOHF9pfp-0uiUWU179b6C2Juix673/edit?usp=drive_link" target="_blank" rel="noopener">Cuenta de cobro</a> diligenciada y firmada.</span></label></li>
+    <li><label><input type="checkbox" id="rebate-1"><span>Certificación bancaria de quien hace la solicitud: el Presidente o el Tesorero de la Rama registrado en vTools.</span></label></li>
+    <li><label><input type="checkbox" id="rebate-2"><span>RUT del año en curso.</span></label></li>
+    <li><label><input type="checkbox" id="rebate-3"><span>Presupuesto que detalle cómo se usará el dinero. Guarda las facturas: IEEE puede solicitarlas.</span></label></li>
+  </ul>
+
   <h3>Otras fuentes de financiación</h3>
+  <p>La Sección Colombia no tiene hoy fondos propios para Ramas. Estas son las convocatorias de IEEE:</p>
   <ul class="reslist">
     <li><a href="https://students.ieee.org/student-opportunities/professional-awareness/" target="_blank" rel="noopener">SPAx (antes SPAC)<small>Eventos de desarrollo profesional. No cubre viajes. Hay un video corto de IEEE Students.</small><span class="go">→</span></a></li>
     <li><a href="https://epics.ieee.org/" target="_blank" rel="noopener">EPICS in IEEE<small>Proyectos de ingeniería con impacto en la comunidad.</small><span class="go">→</span></a></li>
@@ -369,23 +766,45 @@
   <p class="sources">Lista completa de convocatorias: <a href="https://students.ieee.org/student-branch-resources" target="_blank" rel="noopener">Student Branch Resources (IEEE Students)</a> · <a href="https://r9.ieee.org/sac/ieee-region-9-sac-resource-center/" target="_blank" rel="noopener">Centro de recursos R9 SAC</a></p>
 </article>
 
-<!-- ============ PREMIOS ============ -->
 <article class="page" id="premios" hidden>
   <div class="kicker">Recursos</div>
   <h2>Premios y concursos</h2>
-  <p>Postular a premios da visibilidad a la Rama y reconoce el trabajo del equipo. Las fechas cambian cada año: revisa siempre la página oficial. Como referencia, el portal de premios SAC de MGA suele abrir en febrero y cerrar a finales de marzo o en abril, y los concursos R9 cierran a mediados de año.</p>
+  <p>Postular a premios da visibilidad a la Rama y reconoce el trabajo del equipo. Las fechas cambian cada año: revisa siempre la página oficial.</p>
 
+  <h3>Premios del SAC Colombia</h3>
+  <p>El SAC Colombia entrega sus premios cada año en la <b>Reunión Nacional de Ramas Estudiantiles (RNR)</b>. En 2026 la convocatoria estuvo abierta del 19 de junio al 31 de julio, con postulación por formulario para cada categoría:</p>
+  <ul>
+    <li>Rama Ejemplar del Año</li>
+    <li>Rama Revelación (Ramas de hasta 2 años)</li>
+    <li>Consejero Legendario</li>
+    <li>Mejor Evento del Año</li>
+    <li>Capítulo Técnico Ejemplar</li>
+    <li>Grupo de Afinidad Ejemplar</li>
+    <li>Colaboración Legendaria</li>
+    <li>Mejor Foto Técnica</li>
+    <li>Mejor Foto No Técnica</li>
+    <li>Video Histórico de IEEE</li>
+    <li>Mejor Página Web de Rama</li>
+    <li>Mejor Página de Capítulo o Grupo de Afinidad</li>
+  </ul>
+  <p>Casi todas las categorías piden evidencia en vTools (eventos reportados), actas y organigrama: otra razón para reportar todo a tiempo.</p>
+  <ul class="reslist">
+    <li><a href="https://sac.ieee.org.co/premios-2026/" target="_blank" rel="noopener">Premios SAC Colombia 2026<small>Requisitos y formulario de cada categoría.</small><span class="go">→</span></a></li>
+    <li><a href="https://www.youtube.com/watch?v=EC0k3SIl30s" target="_blank" rel="noopener">Premios y Reconocimientos Estudiantiles (SAC Colombia)<small>Transmisión de 2026 que explica las convocatorias.</small><span class="go">→</span></a></li>
+    <li><a href="https://wp.ieee.org.co/rnr2026/" target="_blank" rel="noopener">RNR 2026 <span class="go">→</span></a></li>
+  </ul>
+
+  <h3>Premios regionales e internacionales</h3>
+  <p class="muted">Como referencia, el portal de premios SAC de MGA suele abrir en febrero y cerrar a finales de marzo o en abril, y los concursos R9 cierran a mediados de año.</p>
   <ul class="reslist">
     <li><a href="https://r9.ieee.org/sac/competition/regional-awards/" target="_blank" rel="noopener">Concursos regionales R9<small>Capítulo y Grupo de Afinidad ejemplar, caso de éxito, fotografía, membresía, sitio web, IEEE Day y más.</small><span class="go">→</span></a></li>
     <li><a href="https://r9.ieee.org/sac/calendario-concursos-r9/" target="_blank" rel="noopener">Calendario de concursos R9 <span class="go">→</span></a></li>
     <li><a href="https://students.ieee.org/student-opportunities/sac-awards-programs/" target="_blank" rel="noopener">Premios SAC de MGA<small>Larry K. Wilson, Darrel Chong, Regional Exemplary Student Branch, Outstanding Branch Counselor.</small><span class="go">→</span></a></li>
     <li><a href="https://ieeextreme.org/" target="_blank" rel="noopener">IEEEXtreme<small>Competencia global de programación de 24 horas.</small><span class="go">→</span></a></li>
-    <li><a href="https://www.youtube.com/watch?v=EC0k3SIl30s" target="_blank" rel="noopener">Premios y Reconocimientos Estudiantiles (SAC Colombia)<small>Transmisión de 2026 que explica las convocatorias.</small><span class="go">→</span></a></li>
     <li><a href="https://r9.ieee.org/sac/past-winners-r9-student-contests/" target="_blank" rel="noopener">Ganadores anteriores R9 <span class="go">→</span></a></li>
   </ul>
 </article>
 
-<!-- ============ CAPACITACIÓN ============ -->
 <article class="page" id="capacitacion" hidden>
   <div class="kicker">Recursos</div>
   <h2>Capacitación</h2>
@@ -405,13 +824,13 @@
   <div class="table-wrap">
     <table class="spec">
       <tr><th>Cargo</th><th>Plan de acción</th><th>Capacitación</th></tr>
-      <tr><td><b>Presidente de Rama</b><br><span class="muted">Student Branch Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=13" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=3" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
-      <tr><td><b>Vicepresidente de Rama</b><br><span class="muted">Student Branch Vice Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=14" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=39" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
-      <tr><td><b>Secretario de Rama</b><br><span class="muted">Student Branch Secretary</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=15" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=40" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
-      <tr><td><b>Tesorero de Rama</b><br><span class="muted">Student Branch Treasurer</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=16" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=41" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
-      <tr><td><b>Presidente de Capítulo de Rama</b><br><span class="muted">Student Branch Chapter Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=17" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=42" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
-      <tr><td><b>Consejero de Rama</b><br><span class="muted">Student Branch Counselor</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=18" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=43" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
-      <tr><td><b>Presidente de Grupo de Afinidad WIE</b><br><span class="muted">Section WIE Affinity Group Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=22" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=47" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
+      <tr><td><b><a href="#presidente-rama">Presidente de Rama</a></b><br><span class="muted">Student Branch Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=13" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=3" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
+      <tr><td><b><a href="#vicepresidente">Vicepresidente de Rama</a></b><br><span class="muted">Student Branch Vice Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=14" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=39" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
+      <tr><td><b><a href="#secretario">Secretario de Rama</a></b><br><span class="muted">Student Branch Secretary</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=15" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=40" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
+      <tr><td><b><a href="#tesorero">Tesorero de Rama</a></b><br><span class="muted">Student Branch Treasurer</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=16" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=41" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
+      <tr><td><b><a href="#presidente-capitulo">Presidente de Capítulo de Rama</a></b><br><span class="muted">Student Branch Chapter Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=17" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=42" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
+      <tr><td><b><a href="#consejero">Consejero de Rama</a></b><br><span class="muted">Student Branch Counselor</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=18" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=43" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
+      <tr><td><b><a href="#presidente-grupo-afinidad">Presidente de Grupo de Afinidad WIE</a></b><br><span class="muted">Section WIE Affinity Group Chair</span></td><td><a href="https://ieee-elearning.org/course/view.php?id=267&amp;section=22" target="_blank" rel="noopener">Plan de acción</a></td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=47" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
       <tr><td><b>Presidente de Grupo de Afinidad</b><br><span class="muted">Affinity Group Chair</span></td><td class="muted">No tiene plan propio</td><td><a href="https://ieee-elearning.org/totara/program/required.php?id=7" target="_blank" rel="noopener">Cursos recomendados</a></td></tr>
     </table>
   </div>
@@ -442,7 +861,52 @@
   </ul>
 </article>
 
-<!-- ============ MARCA ============ -->
+<article class="page" id="cursos-cle" hidden>
+  <div class="kicker">Recursos</div>
+  <h2>Cursos del CLE</h2>
+  <p>Estos son los 24 cursos que el Center for Leadership Excellence recomienda a los cargos de Ramas, Capítulos y Grupos de Afinidad. Casi todos son un video corto con una descripción y, en algunos casos, un cuestionario y un certificado. Para entrar necesitas tu cuenta IEEE. En la página de cada <a href="#presidente-rama">cargo</a> están los cursos que le corresponden.</p>
+  <div class="note">
+    <span>Muchas grabaciones son de 2017 a 2020. Sirven para entender IEEE y para liderar, pero las fechas y los procesos actuales están en el <a href="#reportes">Manual MGA 2026</a>.</span>
+  </div>
+  <h3>Conocer IEEE</h3>
+  <ul class="reslist">
+    <li><a href="https://ieee-elearning.org/course/view.php?id=239" target="_blank" rel="noopener">Introduction to IEEE<small>Introducción a IEEE: organización, estructura global, gobernanza y dirección estratégica. Grabación, presentación y cuestionario. Grabación de VoLT.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=240" target="_blank" rel="noopener">Introduction to IEEE Member & Geographic Activities MGA<small>Introducción a Member and Geographic Activities (MGA): su estructura, sus servicios y los recursos para voluntarios. 19 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=241" target="_blank" rel="noopener">Introduction to IEEE Affinity Groups<small>Introducción a los Grupos de Afinidad (WIE, Young Professionals, Life Members y Consultants Network): estructura, programas y recursos. 4 grabaciones.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=242" target="_blank" rel="noopener">Introduction to Technical Activities TAB<small>Introducción a Technical Activities: las Sociedades técnicas, su estructura y sus recursos. 40 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=244" target="_blank" rel="noopener">Introduction to IEEE Educational Activities EAB<small>Introducción a Educational Activities: programas de desarrollo profesional y cómo aprovecharlos. 20 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=49" target="_blank" rel="noopener">IEEE Code of Ethics<small>El Código de Ética de IEEE, que todo miembro se compromete a cumplir. Lectura.</small><span class="go">→</span></a></li>
+  </ul>
+  <h3>Liderazgo y gestión de la unidad</h3>
+  <ul class="reslist">
+    <li><a href="https://ieee-elearning.org/course/view.php?id=278" target="_blank" rel="noopener">Global Leadership Development<small>Buenas prácticas para desarrollar liderazgo en una comunidad global como IEEE. 18 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=280" target="_blank" rel="noopener">Driving Vitality of Sections, Chapters, and Affinity Groups<small>Indicadores de vitalidad de una unidad y cómo usarlos para mejorar la comunicación y la satisfacción de los miembros. 2 videos, 36 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=281" target="_blank" rel="noopener">Attracting and Retaining New Members<small>Buenas prácticas para reclutar y retener miembros. 47 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=283" target="_blank" rel="noopener">MGA Geographic Units Financials, Best Practices and a Section Example<small>Cómo se generan, gastan, reportan y protegen los fondos de una unidad de IEEE, con el ejemplo de una Sección. 2 sesiones, 33 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=284" target="_blank" rel="noopener">Engaging with Industry Professionals<small>Qué valoran los profesionales de la industria y qué programas los acercan a IEEE. 36 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=289" target="_blank" rel="noopener">Public Visibility and External Relationships<small>Cómo difundir tus eventos: kit de visibilidad, banners descargables, plan de publicidad y redes sociales. 2 videos, 21 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=291" target="_blank" rel="noopener">Developing Networking Skills - Personal & Professional Development<small>Networking presencial y en redes sociales, y marca personal. 26 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=287" target="_blank" rel="noopener">Educational Resources for Humanitarian Activities<small>Materiales para proyectos humanitarios: SIGHT, Engineering for Change y más. 28 min.</small><span class="go">→</span></a></li>
+  </ul>
+  <h3>Comunicación y herramientas</h3>
+  <ul class="reslist">
+    <li><a href="https://ieee-elearning.org/course/view.php?id=145" target="_blank" rel="noopener">Podcast: Six Tips for Effective E-Mail<small>Podcast con seis consejos para escribir correos efectivos: a quién, qué tan largos y qué incluir. 5 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=288" target="_blank" rel="noopener">IGNITE - Helping Your Members Build Writing and Presentation Skills<small>Recursos gratuitos de la Professional Communication Society para escribir y presentar mejor. 6 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=282" target="_blank" rel="noopener">IGNITE - vTools Introduction<small>Qué ofrece vTools para simplificar tu trabajo como voluntario. 5 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=322" target="_blank" rel="noopener">IGNITE - Get the Latest in Education from IEEE: Connect with Your Region Education Coordinator<small>Cómo trabajar con el coordinador de educación de tu Región. 5 min.</small><span class="go">→</span></a></li>
+  </ul>
+  <h3>Casos de éxito (IGNITE)</h3>
+  <ul class="reslist">
+    <li><a href="https://ieee-elearning.org/course/view.php?id=323" target="_blank" rel="noopener">IGNITE - Dronefest: Engaging the local community for impact<small>Caso "Dronefest": un evento con drones para involucrar a la comunidad local. 5 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=339" target="_blank" rel="noopener">IGNITE - The WIE International Leadership Conference: A New Conference Case Study<small>Caso de éxito de la WIE International Leadership Conference. 5 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=343" target="_blank" rel="noopener">IGNITE - Engaging Young Professionals and Women Through Design Challenges<small>Concursos de diseño (Power Electronics Society) para atraer estudiantes, jóvenes profesionales y mujeres. 5 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=344" target="_blank" rel="noopener">IGNITE - Growing Student Communities Through Experiential Education<small>Proyectos prácticos listos para usar ("projects-in-a-box") que hicieron crecer un Capítulo estudiantil. 6 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=349" target="_blank" rel="noopener">IGNITE - Building Your Technical Community in IEEE Collabratec<small>Cómo usar comunidades y grupos de Collabratec para organizar un Capítulo. 6 min.</small><span class="go">→</span></a></li>
+    <li><a href="https://ieee-elearning.org/course/view.php?id=350" target="_blank" rel="noopener">IGNITE - Women in Engineering Focus in Technical Activities<small>Estrategias de una Sociedad técnica para promover la participación de mujeres. 6 min.</small><span class="go">→</span></a></li>
+  </ul>
+  <p class="sources">Fuente: programas de capacitación recomendada del CLE, consultados en noviembre de 2026.</p>
+</article>
+
 <article class="page" id="marca" hidden>
   <div class="kicker">Recursos</div>
   <h2>Marca y comunicación</h2>
@@ -455,64 +919,32 @@
   </ul>
 </article>
 
-<!-- ============ CONTACTO ============ -->
 <article class="page" id="contacto" hidden>
   <div class="kicker">Recursos</div>
   <h2>¿A quién preguntar?</h2>
   <p>Sigue este orden según el tipo de duda:</p>
   <div class="grid3">
     <div class="card"><h3>1. Local</h3><p class="muted">Consejero de la Rama (Branch Counselor) y la junta anterior.</p></div>
-    <div class="card"><h3>2. Sección Colombia</h3><p class="muted">Presidente de Actividades Estudiantiles (SSAC) y Representante Estudiantil (SSR). <a href="mailto:sac@ieee.org.co">sac@ieee.org.co</a></p></div>
-    <div class="card"><h3>3. Región 9</h3><p class="muted">Equipo R9 SAC (RSAC y RSR). <a href="https://r9.ieee.org/sac/contact-us/" target="_blank" rel="noopener">Contacto</a> · <a href="https://r9.ieee.org/sac/sac-team-2026-2027/" target="_blank" rel="noopener">Equipo 2026 a 2027</a></p></div>
+    <div class="card"><h3>2. SAC Colombia</h3><p class="muted">El equipo SAC de la Sección, por el <a href="https://chat.whatsapp.com/BVxRVrkb2ML39LTcTGSPsQ" target="_blank" rel="noopener">chat de la comunidad IEEE Colombia</a> en WhatsApp o al correo <a href="mailto:sac@ieee.org.co">sac@ieee.org.co</a>.</p></div>
+    <div class="card"><h3>3. Región 9</h3><p class="muted">Equipo R9 SAC. <a href="https://r9.ieee.org/sac/contact-us/" target="_blank" rel="noopener">Contacto</a></p></div>
   </div>
-  <p style="margin-top:14px">Problemas técnicos con cuentas o herramientas: <a href="https://supportcenter.ieee.org" target="_blank" rel="noopener">IEEE Support Center</a>.</p>
+
+  <h3>Zonas de la Sección Colombia</h3>
+  <p>La Sección Colombia organiza sus Ramas por zonas. Chocó no pertenece a ninguna zona, y las universidades del Caribe pertenecen a otra Sección, ColCaribe. Ver el <a href="https://www.google.com/maps/d/viewer?mid=1RM2Ua3vGE2Tw4CMoe3bfAZ0nLOAjCbE" target="_blank" rel="noopener">mapa de zonas</a> y el <a href="https://sac.ieee.org.co/junta-directiva/" target="_blank" rel="noopener">equipo del SAC Colombia</a>.</p>
+  <div class="table-wrap">
+    <table class="spec">
+      <tr><th>Zona</th><th>Departamentos</th></tr>
+      <tr><td><b>Antioquia</b></td><td>Antioquia</td></tr>
+      <tr><td><b>Centro</b></td><td>Bogotá, Cundinamarca, Boyacá, Meta y Tolima</td></tr>
+      <tr><td><b>Eje Cafetero</b></td><td>Caldas, Quindío y Risaralda</td></tr>
+      <tr><td><b>Santanderes</b></td><td>Santander y Norte de Santander</td></tr>
+      <tr><td><b>Suroccidente</b></td><td>Valle del Cauca, Cauca, Huila y Nariño</td></tr>
+    </table>
+  </div>
+
+  <p>Problemas técnicos con cuentas o herramientas: <a href="https://supportcenter.ieee.org" target="_blank" rel="noopener">IEEE Support Center</a>.</p>
 </article>
 
-<!-- ============ GLOSARIO ============ -->
-<article class="page" id="glosario" hidden>
-  <div class="kicker">Recursos</div>
-  <h2>Glosario</h2>
-  <p>Siglas y términos que vas a encontrar en IEEE. Usa el buscador del menú para saltar a la página donde aparecen.</p>
-  <dl class="glossary">
-    <dt>Action Plan <small>Plan de acción</small></dt><dd>Lista de tareas del CLE para cada cargo: primeros 30 días, tareas administrativas clave y tareas anuales. <a href="#capacitacion">Ver por cargo</a>.</dd>
-    <dt>Advisor <small>Asesor</small></dt><dd>Profesor o miembro que acompaña a un Capítulo o Grupo de Afinidad de Rama.</dd>
-    <dt>Affinity Group (AG) <small>Grupo de Afinidad</small></dt><dd>Unidad que reúne a miembros por un interés común no técnico, como WIE o Young Professionals. <a href="#capitulos">Ver más</a>.</dd>
-    <dt>Annual Plan <small>Plan Anual</small></dt><dd>Plan de actividades del año que cada Rama sube en vTools SB Reporting antes del 15 de marzo.</dd>
-    <dt>Branch Counselor <small>Consejero de Rama</small></dt><dd>Profesor miembro de IEEE que acompaña a la Rama. Lo nombra el presidente de la Sección.</dd>
-    <dt>CLE <small>Center for Leadership Excellence</small></dt><dd>Plataforma de formación de IEEE para voluntarios, con descripciones de cargos y cursos. <a href="https://ieee-elearning.org/CLE/" target="_blank" rel="noopener">ieee-elearning.org/CLE</a>.</dd>
-    <dt>Collabratec</dt><dd>Red profesional y de colaboración de IEEE.</dd>
-    <dt>eNotice</dt><dd>Herramienta de vTools para enviar convocatorias por correo a los miembros.</dd>
-    <dt>EPICS <small>EPICS in IEEE</small></dt><dd>Programa que financia proyectos de ingeniería con impacto en la comunidad.</dd>
-    <dt>ExCom <small>Comité Ejecutivo</small></dt><dd>Junta directiva de la Rama: presidente, vicepresidente, secretario y tesorero, como mínimo.</dd>
-    <dt>Good standing <small>Al día</small></dt><dd>Miembro con la membresía pagada para el año en curso.</dd>
-    <dt>Graduate Student Member (GSM) <small>Miembro estudiante de posgrado</small></dt><dd>Grado de membresía para estudiantes de maestría o doctorado.</dd>
-    <dt>IEEE Day</dt><dd>Celebración anual de IEEE en octubre, con concursos para Ramas.</dd>
-    <dt>IEEEXtreme</dt><dd>Competencia global de programación de 24 horas para estudiantes miembros.</dd>
-    <dt>MGA <small>Member and Geographic Activities</small></dt><dd>Área de IEEE que define las reglas de Secciones, Ramas y demás unidades, en su Manual de Operaciones.</dd>
-    <dt>OU <small>Organizational Unit</small></dt><dd>Unidad organizacional: cualquier Rama, Capítulo, Grupo de Afinidad o Sección.</dd>
-    <dt>OU Analytics</dt><dd>Herramienta para consultar la lista de miembros y renovaciones de tu unidad.</dd>
-    <dt>Rebate <small>Reembolso</small></dt><dd>Dinero que IEEE devuelve cada año a las unidades activas que cumplen sus reportes. <a href="#fondos">Ver más</a>.</dd>
-    <dt>Región 9 (R9)</dt><dd>Región de IEEE que agrupa a Latinoamérica y el Caribe.</dd>
-    <dt>RNR <small>Reunión Nacional de Ramas</small></dt><dd>Encuentro nacional de Ramas Estudiantiles de Colombia.</dd>
-    <dt>RSAC / RSR</dt><dd>Presidente del SAC de la Región y Representante Estudiantil de la Región.</dd>
-    <dt>SAC <small>Student Activities Committee</small></dt><dd>Comité de Actividades Estudiantiles. Existe en la Sección (SAC Colombia), en la Región y en MGA.</dd>
-    <dt>SBRM <small>Student Branch Regional Meeting</small></dt><dd>Reunión regional de Ramas Estudiantiles de la Región 9.</dd>
-    <dt>Sección <small>Section</small></dt><dd>Unidad geográfica de IEEE. Las Ramas de Colombia pertenecen a la Sección Colombia.</dd>
-    <dt>Society <small>Sociedad</small></dt><dd>Comunidad técnica de IEEE (por ejemplo, Computer Society). Sus Capítulos de Rama se llaman Student Branch Chapters.</dd>
-    <dt>SPAx <small>Student Professional Awareness</small></dt><dd>Programa que financia eventos de desarrollo profesional para estudiantes. Antes se llamaba SPAC.</dd>
-    <dt>SSAC / SSR</dt><dd>Presidente de Actividades Estudiantiles de la Sección y Representante Estudiantil de la Sección.</dd>
-    <dt>STEP <small>Student Transition and Elevation Partnership</small></dt><dd>Eventos para la transición de estudiante a profesional, financiados por Young Professionals.</dd>
-    <dt>Student Branch (SB) <small>Rama Estudiantil</small></dt><dd>Grupo oficial de IEEE en una universidad, con al menos 12 estudiantes miembros. <a href="#requisitos">Ver más</a>.</dd>
-    <dt>Student Branch Chapter (SBC) <small>Capítulo de Rama</small></dt><dd>Subunidad técnica de una Rama, ligada a una Sociedad. Requiere 6 miembros para crearse.</dd>
-    <dt>Student Member <small>Miembro estudiante</small></dt><dd>Grado de membresía para estudiantes de pregrado.</dd>
-    <dt>vTools</dt><dd>Conjunto de herramientas en línea de IEEE para voluntarios: reportes de directivos, eventos, Plan Anual y más.</dd>
-    <dt>VoLT <small>Volunteer Leadership Training</small></dt><dd>Programa de formación de liderazgo del CLE.</dd>
-    <dt>WIE <small>Women in Engineering</small></dt><dd>Grupo de Afinidad de IEEE que promueve la participación de mujeres en ingeniería.</dd>
-    <dt>YP <small>Young Professionals</small></dt><dd>Grupo de Afinidad para miembros recién graduados.</dd>
-  </dl>
-</article>
-
-<!-- ============ ENLACES ============ -->
 <article class="page" id="enlaces" hidden>
   <div class="kicker">Recursos</div>
   <h2>Todos los enlaces</h2>
@@ -537,6 +969,8 @@
     <li><a href="https://r9.ieee.org/sac/sbrm-about/" target="_blank" rel="noopener">SBRM: Reunión Regional de Ramas Estudiantiles <span class="go">→</span></a></li>
     <li><a href="https://r9.ieee.org/sac/spark" target="_blank" rel="noopener">Programa SPARK (R9) <span class="go">→</span></a></li>
     <li><a href="https://sac.ieee.org.co" target="_blank" rel="noopener">Portal SAC Colombia <span class="go">→</span></a></li>
+    <li><a href="https://sac.ieee.org.co/ramas-estudiantiles/" target="_blank" rel="noopener">Ramas Estudiantiles de Colombia (SAC) <span class="go">→</span></a></li>
+    <li><a href="https://www.google.com/maps/d/viewer?mid=1RM2Ua3vGE2Tw4CMoe3bfAZ0nLOAjCbE" target="_blank" rel="noopener">Mapa de zonas de la Sección Colombia <span class="go">→</span></a></li>
     <li><a href="https://www.instagram.com/ieeesacteamcol/" target="_blank" rel="noopener">Instagram SAC Team Colombia <span class="go">→</span></a></li>
     <li><a href="https://www.youtube.com/@sacteamcolombia" target="_blank" rel="noopener">YouTube SAC Team Colombia <span class="go">→</span></a></li>
     <li><a href="https://www.youtube.com/@ieeer9sacteam" target="_blank" rel="noopener">YouTube IEEE R9 SAC Team <span class="go">→</span></a></li>
