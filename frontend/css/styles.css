@@ -203,3 +203,7 @@ footer { background: var(--subtle); border-top: 1px solid var(--line); padding: 
 footer .org { font-weight: 600; font-size: 15px; margin-bottom: 4px; }
 footer p { margin: 0 0 4px; font-size: 14px; }
 footer .foot-meta { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+
+.shot { margin: 14px 0; }
+.shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
+.shot figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
