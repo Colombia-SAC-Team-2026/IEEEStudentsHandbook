@@ -49,6 +49,11 @@ a:hover { text-decoration: underline; }
   border-radius: 6px; padding: 5px 10px; font: inherit; font-size: 13.5px; cursor: pointer;
 }
 #back { white-space: nowrap; }
+.feedback-btn {
+  border: 1px solid var(--blue); color: var(--blue); border-radius: 6px;
+  padding: 5px 10px; font-size: 13.5px; font-weight: 500; white-space: nowrap;
+}
+.feedback-btn:hover { background: var(--blue); color: #fff; text-decoration: none; }
 @media (max-width: 480px) { .topbar .brand span { display: none; } }
 #back:hover { border-color: #A1A1AA; color: var(--ink); }
 #menu-toggle {
