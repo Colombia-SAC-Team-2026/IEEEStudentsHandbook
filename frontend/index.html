@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -94,6 +95,18 @@
     <li>Usa el buscador para encontrar un tema en todas las páginas, y el botón «Atrás» para volver.</li>
     <li>Cada página es un resumen corto que enlaza a la fuente oficial. Si algo no coincide, manda la fuente oficial.</li>
   </ul>
+
+  <section id="ramas" hidden>
+    <h3>Ramas de la Sección Colombia</h3>
+    <p class="muted">Pasa el cursor sobre un marcador para ver la Rama y su número de miembros. El contorno oscuro marca el territorio de la Sección Colombia. El mapa necesita conexión a internet.</p>
+    <div id="ramas-mapa" role="region" aria-label="Mapa de las Ramas Estudiantiles de la Sección Colombia"></div>
+    <ul id="ramas-leyenda" class="legend"></ul>
+    <details class="ramas-lista">
+      <summary>Ver la lista de Ramas</summary>
+      <table id="ramas-lista"></table>
+    </details>
+    <p class="sources">Miembros: <a href="https://vtools.ieee.org/" target="_blank" rel="noopener">IEEE vTools</a>, corte del 8 de noviembre de 2026. Límites por departamento: <a href="https://www.geoboundaries.org/" target="_blank" rel="noopener">geoBoundaries</a> (OpenStreetMap, ODbL). Las zonas están en <a href="#contacto">¿A quién preguntar?</a>. Las ubicaciones de las Ramas son aproximadas.</p>
+  </section>
 
   <p class="sources">Última revisión: noviembre de 2026. Fuentes principales: <a href="https://mga.ieee.org/board-committees/operations-manual" target="_blank" rel="noopener">Manual de Operaciones de MGA</a> (edición de junio de 2026) y el <a href="https://ieee-elearning.org/CLE/" target="_blank" rel="noopener">Center for Leadership Excellence (CLE)</a>.</p>
 </article>
@@ -1164,5 +1177,8 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="js/ramas-geo.js"></script>
+<script src="js/ramas.js"></script>
 </body>
 </html>
