@@ -15,9 +15,11 @@ const HOME = pages[0].id;
 // Accent-insensitive normalization so "reunion" matches "reunión".
 const norm = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
+// A hash can name a page or an element inside one (e.g. #cobrar-rebate): show its page, then scroll to it.
 function show(id) {
-  const page = document.getElementById(id);
-  const target = page && page.classList.contains('page') ? page : document.getElementById(HOME);
+  const el = document.getElementById(id);
+  const page = el && el.closest('article.page');
+  const target = page || document.getElementById(HOME);
   pages.forEach((p) => { p.hidden = p !== target; });
   links.forEach((l) => {
     const on = l.dataset.page === target.id;
@@ -34,14 +36,20 @@ function show(id) {
   const h = target.querySelector('h1, h2');
   document.title = (h ? h.textContent + ' · ' : '') + 'Wiki Ramas Estudiantiles IEEE Colombia';
   sidebar.classList.remove('open');
-  // Instant: the browser's native anchor jump to the article id would otherwise leave the page offset.
-  window.scrollTo({ top: 0, behavior: 'instant' });
+  jump();
+}
+
+// Instant: the browser's native anchor jump to the article id would otherwise leave the page offset.
+function jump() {
+  const el = document.getElementById(location.hash.slice(1));
+  if (el && !el.classList.contains('page') && el.closest('article.page') && !el.closest('[hidden]')) el.scrollIntoView({ behavior: 'instant' });
+  else window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 window.addEventListener('hashchange', () => show(location.hash.slice(1)));
 show(location.hash.slice(1) || HOME);
 // On first load the browser jumps to the fragment after this script runs; undo it.
-window.addEventListener('load', () => window.scrollTo({ top: 0, behavior: 'instant' }));
+window.addEventListener('load', jump);
 
 // Back: previous page in this tab, or home when the wiki was opened directly on a page.
 const startLength = history.length;
@@ -66,9 +74,9 @@ order.forEach((l, i) => {
   page.appendChild(nav);
 });
 
-// Search: hide sidebar entries whose page text does not contain the query; open groups with matches.
+// Search: keep sidebar entries whose title or data-keywords (synonyms) contain the query, or whose page text does; open groups with matches.
 const pageText = Object.fromEntries(pages.map((p) => [p.id, norm(p.textContent)]));
-const matches = (l, q) => !q || pageText[l.dataset.page].includes(q) || norm(l.textContent).includes(q);
+const matches = (l, q) => !q || norm(l.textContent + ' ' + (l.dataset.keywords || '')).includes(q) || pageText[l.dataset.page].includes(q);
 search.addEventListener('input', () => {
   const q = norm(search.value.trim());
   let shown = 0;

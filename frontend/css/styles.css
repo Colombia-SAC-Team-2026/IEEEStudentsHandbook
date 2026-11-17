@@ -213,6 +213,9 @@ footer .foot-meta { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
 .shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }
 .shot figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
 
+/* In-page anchors (e.g. #cobrar-rebate) must not hide under the sticky top bar. */
+h3[id] { scroll-margin-top: calc(var(--topbar-h) + 16px); }
+
 /* Branch map on the home page. isolation keeps Leaflet's internal z-indexes below the sticky bar and drawer. */
 #ramas-mapa { height: 560px; border: 1px solid var(--line); border-radius: 8px; isolation: isolate; }
 .legend { list-style: none; display: flex; flex-wrap: wrap; gap: 6px 16px; padding: 0; margin: 10px 0; font-size: 14px; }
