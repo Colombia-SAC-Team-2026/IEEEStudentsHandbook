@@ -1,4 +1,4 @@
-// Home page map of the Student Branches of the IEEE Colombia Section (Leaflet, no tile layer).
+// Home page map of the Student Branches of the IEEE Colombia Section (Leaflet, department outlines plus faint street tiles).
 // Plain script (no fetch, no modules). If Leaflet did not load (offline), the section stays hidden.
 // Departments come from ramas-geo.js. Branch data: name, zone, latitude, longitude, members (IEEE vTools, 8 Nov 2026).
 // Coordinates are approximate (one campus per branch).
@@ -86,7 +86,7 @@
   ];
 
   section.hidden = false;
-  const map = L.map(el, { scrollWheelZoom: true, zoomSnap: 0.5, attributionControl: true });
+  const map = L.map(el, { scrollWheelZoom: true, zoomSnap: 0.5, attributionControl: true, minZoom: 4, maxZoom: 18 });
   map.attributionControl.setPrefix(false);
   map.attributionControl.addAttribution('Límites: <a href="https://www.geoboundaries.org/">geoBoundaries</a> (OpenStreetMap, ODbL)');
 
@@ -96,7 +96,15 @@
   RAMAS_DEPTS.filter((d) => d.z === 'Caribe').forEach((d) => add(d, { color: '#A1A1AA', weight: 1, dashArray: '3 3', fillColor: CARIBE, fillOpacity: 1 }));
   inSection.forEach((d) => add(d, { color: '#1F2937', weight: 5, fill: false }));
   inSection.forEach((d) => add(d, { color: '#fff', weight: 1, fillColor: ZONES[d.z] || NO_ZONE, fillOpacity: 1 }));
-  map.fitBounds(L.geoJSON(inSection.map((d) => d.g)).getBounds(), { padding: [10, 10] });
+  const sectionBounds = L.geoJSON(inSection.map((d) => d.g)).getBounds();
+  map.fitBounds(sectionBounds, { padding: [10, 10], maxZoom: 6.5 });
+
+  // Faint streets, from zoom 6 (map fits at about 6 on desktop), to place a campus by street. Grey + multiply keeps the zone colours visible.
+  Object.assign(map.createPane('streets').style, { zIndex: 450, mixBlendMode: 'multiply', filter: 'grayscale(1)', pointerEvents: 'none' });
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    pane: 'streets', minZoom: 6, maxZoom: 18, opacity: 0.35,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  }).addTo(map);
 
   // One pin per branch, coloured by zone. Pins are focusable markers; the tooltip shows the member count.
   const pin = (color) => L.divIcon({
@@ -119,10 +127,18 @@
   });
 
   // Same data as a text list: keyboard and screen reader users cannot hover the markers.
-  document.getElementById('ramas-leyenda').innerHTML = Object.entries(ZONES)
-    .map(([z, c]) => `<li><span class="dot" style="background:${c}"></span>${z}</li>`).join('') +
+  const legend = document.getElementById('ramas-leyenda');
+  legend.innerHTML = '<li><button type="button" data-zone="">Toda la Sección</button></li>' +
+    Object.entries(ZONES).map(([z, c]) => `<li><button type="button" data-zone="${z}"><span class="dot" style="background:${c}"></span>${z}</button></li>`).join('') +
     `<li><span class="dot" style="background:${NO_ZONE}"></span>Sin zona</li>` +
     `<li><span class="dot" style="background:${CARIBE};border:1px dashed #A1A1AA"></span>Otra Sección (ColCaribe)</li>`;
+  // Click a zone to zoom to its departments.
+  legend.addEventListener('click', (e) => {
+    const b = e.target.closest('button[data-zone]');
+    if (!b) return;
+    const group = inSection.filter((d) => !b.dataset.zone || d.z === b.dataset.zone).map((d) => d.g);
+    map.fitBounds(b.dataset.zone ? L.geoJSON(group).getBounds() : sectionBounds, { padding: [20, 20], maxZoom: b.dataset.zone ? 9 : 6.5 });
+  });
   document.getElementById('ramas-lista').innerHTML = '<tr><th>Rama</th><th>Zona</th><th>Miembros</th></tr>' +
     BRANCHES.map(([n, z, , , m]) => `<tr><td>${n}</td><td>${z}</td><td>${m}</td></tr>`).join('');
 
