@@ -28,3 +28,6 @@
 .ramas-lista th, .ramas-lista td { text-align: left; padding: 4px 8px; border-bottom: 1px solid var(--md-default-fg-color--lightest); }
 @media (max-width: 640px) { #ramas-mapa { height: 460px; } }
 .ramas-pin { background: none; border: 0; }
+
+/* Use more of wide screens; Material's default caps the layout at 61rem. */
+.md-grid { max-width: 80rem; }

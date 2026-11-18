@@ -29,6 +29,9 @@ theme:
     - search.suggest
     - search.highlight
 
+hooks:
+  - hooks/search_fold.py
+
 plugins:
   - search:
       lang: es

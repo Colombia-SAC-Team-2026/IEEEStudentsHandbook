@@ -11,6 +11,7 @@ MkDocs Material site, built from Markdown. Non-programmers edit pages through Gi
 - `docs/imagenes/`: images. `docs/stylesheets/extra.css`: brand color, `.sources` paragraphs and the branch map.
 - `docs/javascripts/checklist.js`: persists task list checkboxes in `localStorage`, keyed by page path plus checkbox index (so reordering items in a checklist resets their saved state).
 - `docs/javascripts/ramas.js` and `ramas-geo.js`: Leaflet map of the Student Branches on the home page (embedded HTML in `docs/index.md`, Leaflet from unpkg).
+- `hooks/search_fold.py`: makes search accent-insensitive by appending folded spellings ("capitulos") to the search index in hidden spans. Material's lunr search does not fold accents.
 - `requirements.txt` pins `mkdocs-material`. `.github/workflows/pages.yml` runs `mkdocs build --strict` and deploys `site/` from `main`.
 - `CLE_Data/` (git-ignored): local export of login-gated CLE content used as a source. Never commit or publish it.
 
