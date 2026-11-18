@@ -4,19 +4,21 @@ Spanish-language wiki for IEEE Student Branch, Student Branch Chapter and Affini
 
 ## Architecture
 
-Plain static site, no build, no dependencies. It must keep working when `frontend/index.html` is opened via `file://` (no `fetch`, no ES modules).
+MkDocs Material site, built from Markdown. Non-programmers edit pages through GitHub's web editor (the pencil on each page, `edit_uri: edit/main/docs/`).
 
-- `frontend/index.html`: every page is an `<article class="page" id="...">` (all but the first have `hidden`). The sidebar has a home link and one `<details class="group">` per section; the `<summary>` link opens the section's overview page and the chevron toggles the group. Every sidebar link has `data-page` matching an article id, and sidebar order defines prev/next links.
-- Sections: Conoce IEEE (`conoce-ieee`), Cargos (`cargos`, one page per role), Operación (`operacion`), Recursos (`recursos`). Role pages share one structure: description, "Checklist recomendado" (interactive, based on the CLE action plan), recommended courses, CLE links.
-- `frontend/js/main.js`: hash router, collapsible groups, back button, accent-insensitive search over page text, pager, checklist persistence in `localStorage` (keyed by checkbox `id`, so ids must be unique and stable).
-- `frontend/css/styles.css`: single stylesheet, IBM Plex Sans/Mono, light theme only, IEEE blue (`--blue`) for links.
+- `mkdocs.yml`: site config, theme (IEEE blue, IBM Plex, light only), Markdown extensions and the explicit `nav:`. The `nav:` defines the sidebar and prev/next order. Each section has an `index.md` overview page (`navigation.indexes`).
+- `docs/`: one `.md` per page. `docs/index.md` is home; sections are folders: `conoce-ieee/`, `cargos/` (one page per role), `operacion/`, `recursos/`. Role pages share one structure: description, "Checklist recomendado" (task lists, based on the CLE action plan), recommended courses, CLE links.
+- `docs/imagenes/`: images. `docs/stylesheets/extra.css`: brand color, `.sources` paragraphs and the branch map.
+- `docs/javascripts/checklist.js`: persists task list checkboxes in `localStorage`, keyed by page path plus checkbox index (so reordering items in a checklist resets their saved state).
+- `docs/javascripts/ramas.js` and `ramas-geo.js`: Leaflet map of the Student Branches on the home page (embedded HTML in `docs/index.md`, Leaflet from unpkg).
+- `requirements.txt` pins `mkdocs-material`. `.github/workflows/pages.yml` runs `mkdocs build --strict` and deploys `site/` from `main`.
 - `CLE_Data/` (git-ignored): local export of login-gated CLE content used as a source. Never commit or publish it.
 
 ### Adding a page
 
-1. Add `<article class="page" id="new-id" hidden>` with a `.kicker` (section name) and an `<h2>`.
-2. Add `<li><a href="#new-id" data-page="new-id">Title</a></li>` inside the right `<details class="group">`, and a card on that section's overview page.
-3. End with a `<p class="sources">` citing official sources.
+1. Create `docs/<section>/new-id.md` starting with an `# Title` heading.
+2. Add it to `nav:` in `mkdocs.yml` in the right section, and a card or link on that section's `index.md`.
+3. End with a sources paragraph: `Fuentes: ...` followed by `{ .sources }` on the next line.
 
 ## Content rules
 
@@ -32,7 +34,9 @@ Plain static site, no build, no dependencies. It must keep working when `fronten
 ## Checking changes
 
 ```sh
-python3 -m http.server 8000 -d frontend
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt   # once
+.venv/bin/mkdocs serve          # http://127.0.0.1:8000
+.venv/bin/mkdocs build --strict # must pass with no warnings
 ```
 
-Check the changed page on desktop and at phone width, and that sidebar search still finds it.
+Check the changed page on desktop and at phone width, and that the search finds it.

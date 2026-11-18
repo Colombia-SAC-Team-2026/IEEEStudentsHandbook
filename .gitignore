@@ -7,3 +7,7 @@ CLE_Data/
 
 # Local vTools tutorial screenshots (contain personal data)
 tutorial-screenshots/
+
+# MkDocs build and local virtualenv
+site/
+.venv/

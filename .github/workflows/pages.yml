@@ -24,9 +24,14 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: actions/configure-pages@v5
-      # Static site, no build step. v4 skips dotfiles, so frontend/.vscode is not published.
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: mkdocs build --strict
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: frontend
+          path: site
       - id: deployment
         uses: actions/deploy-pages@v4
