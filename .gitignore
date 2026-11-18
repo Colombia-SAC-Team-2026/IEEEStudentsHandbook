@@ -11,3 +11,4 @@ tutorial-screenshots/
 # MkDocs build and local virtualenv
 site/
 .venv/
+__pycache__/
