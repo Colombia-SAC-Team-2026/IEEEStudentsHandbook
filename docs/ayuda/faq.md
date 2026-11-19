@@ -38,5 +38,9 @@ Respuestas cortas a las dudas más comunes. Cada una enlaza a la página con el 
 
     La Reunión Nacional de Ramas (RNR) es el encuentro anual de voluntarios estudiantiles de IEEE Colombia, con redes de contacto, formación en liderazgo y entrega de los premios del SAC Colombia. Ver [Premios del SAC Colombia](../premios/premios-sac-colombia.md).
 
+??? question "¿Cómo reporto un error o propongo un cambio en la wiki?"
+
+    Usa el [formulario de feedback de la wiki](https://forms.gle/Pcnj6NDTTKKTbPtP6), que también está en la barra superior y en el pie de cada página. Si sabes qué corregir, puedes proponer el cambio con el lápiz de la página. Para dudas sobre IEEE, mira [¿A quién preguntar?](contacto.md).
+
 Fuente: preguntas frecuentes del [SAC Colombia](https://sac.ieee.org.co), completadas con las páginas de esta wiki.
 { .sources }

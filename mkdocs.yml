@@ -64,6 +64,7 @@ extra_javascript:
   - javascripts/ramas-geo.js
   - javascripts/ramas.js
   - javascripts/checklist.js
+  - javascripts/feedback.js
 
 validation:
   links:

@@ -22,5 +22,7 @@ Para saber a qué zona de la Sección pertenece tu Rama, mira las [zonas de la S
 
 Problemas técnicos con cuentas o herramientas: [IEEE Support Center](https://supportcenter.ieee.org).
 
+¿Encontraste un error en esta wiki o falta algo? Cuéntanos en el [formulario de feedback de la wiki](https://forms.gle/Pcnj6NDTTKKTbPtP6).
+
 Fuentes: [SAC Colombia](https://sac.ieee.org.co) · [R9 SAC](https://r9.ieee.org/sac) · [IEEE Support Center](https://supportcenter.ieee.org).
 { .sources }
