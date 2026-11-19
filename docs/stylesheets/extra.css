@@ -33,6 +33,6 @@
 .md-grid { max-width: 80rem; }
 
 /* "Feedback wiki" link next to the header search (added by javascripts/feedback.js). */
-.md-header__feedback { flex-shrink: 0; margin: 0 0.4rem; padding: 0.2rem 0.7rem; color: var(--md-primary-bg-color); font-size: 0.7rem; white-space: nowrap; border: 1px solid rgba(255, 255, 255, 0.6); border-radius: 999px; }
-.md-header__feedback:hover { background: rgba(255, 255, 255, 0.15); color: var(--md-primary-bg-color); }
+.md-header__feedback { flex-shrink: 0; margin: 0 0.6rem 0 1rem; padding: 0.3rem 0.9rem; color: var(--md-primary-bg-color); font-size: 0.75rem; font-weight: 500; line-height: 1.2; white-space: nowrap; border: 1.5px solid var(--md-primary-bg-color); border-radius: 999px; transition: background-color 0.15s; }
+.md-header__feedback:hover { background: rgba(255, 255, 255, 0.18); color: var(--md-primary-bg-color); }
 @media (max-width: 44.9375em) { .md-header__feedback { display: none; } }
