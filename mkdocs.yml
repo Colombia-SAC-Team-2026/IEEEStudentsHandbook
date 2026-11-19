@@ -24,6 +24,7 @@ theme:
     accent: custom
   features:
     - navigation.indexes
+    - content.tooltips
     - navigation.footer
     - content.action.edit
     - search.suggest
@@ -37,6 +38,7 @@ plugins:
       lang: es
 
 markdown_extensions:
+  - abbr
   - admonition
   - attr_list
   - md_in_html
@@ -44,6 +46,10 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
+  - pymdownx.snippets:
+      check_paths: true
+      auto_append:
+        - includes/abbreviations.md
   - pymdownx.superfences
   - pymdownx.tasklist:
       custom_checkbox: true
