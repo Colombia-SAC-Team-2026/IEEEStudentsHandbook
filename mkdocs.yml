@@ -1,5 +1,5 @@
 site_name: Wiki Ramas Estudiantiles IEEE Colombia
-site_description: "Wiki para directivos de Ramas Estudiantiles IEEE en Colombia: qué hacer, cuándo y dónde encontrar la información oficial."
+site_description: "Wiki para estudiantes, miembros, directivos y Consejeros de las Ramas Estudiantiles IEEE de Colombia: cómo unirte, qué hacer, cuándo y dónde encontrar la información oficial."
 site_url: https://colombia-sac-team-2026.github.io/IEEEStudentsHandbook/
 repo_url: https://github.com/Colombia-SAC-Team-2026/IEEEStudentsHandbook
 repo_name: Colombia-SAC-Team-2026/IEEEStudentsHandbook
@@ -59,43 +59,64 @@ extra_javascript:
   - javascripts/ramas.js
   - javascripts/checklist.js
 
+validation:
+  links:
+    anchors: warn
+
+
 nav:
-  - Inicio: index.md
-  - Conoce IEEE:
-      - conoce-ieee/index.md
-      - Cómo unirse a IEEE: conoce-ieee/unirse.md
-      - IEEE Sección Colombia: conoce-ieee/seccion-colombia.md
-      - Glosario: conoce-ieee/glosario.md
-  - Cargos:
-      - cargos/index.md
-      - Presidente de Rama: cargos/presidente-rama.md
-      - Presidente de Capítulo: cargos/presidente-capitulo.md
-      - Presidente de Grupo de Afinidad: cargos/presidente-grupo-afinidad.md
-      - Vicepresidente: cargos/vicepresidente.md
-      - Secretario: cargos/secretario.md
-      - Tesorero: cargos/tesorero.md
-      - Consejero de Rama: cargos/consejero.md
-  - Operación:
-      - operacion/index.md
-      - Requisitos de una Rama: operacion/requisitos.md
-      - Reportes y fechas límite: operacion/reportes.md
-      - Organizar un evento: operacion/organizar-evento.md
-      - Reportar un evento en vTools: operacion/reportar-evento.md
-      - Año de membresía: operacion/membresia.md
-      - Captación y retención de miembros: operacion/captacion.md
-      - Junta directiva y funciones: operacion/junta-directiva.md
-      - Capítulos y Grupos de Afinidad: operacion/capitulos.md
-      - Cómo crear un Capítulo: operacion/crear-capitulo.md
-      - Elecciones: operacion/elecciones.md
-      - Transición de la junta (empalme): operacion/empalme.md
-  - Recursos:
-      - recursos/index.md
-      - Herramientas digitales: recursos/herramientas.md
-      - Rebates y financiación: recursos/fondos.md
-      - Premios y concursos: recursos/premios.md
-      - Capacitación: recursos/capacitacion.md
-      - Cursos del CLE: recursos/cursos-cle.md
-      - Marca y comunicación: recursos/marca.md
-      - ¿A quién preguntar?: recursos/contacto.md
-      - Preguntas frecuentes: recursos/faq.md
-      - Todos los enlaces: recursos/enlaces.md
+  - "Inicio": index.md
+  - "Empezar en IEEE":
+      - empezar/index.md
+      - "IEEE en Colombia": empezar/ieee-colombia.md
+      - "Cómo unirse a IEEE": empezar/unirse.md
+      - "Participar como voluntario": empezar/participar.md
+  - "Mi cargo":
+      - mi-cargo/index.md
+      - "Tu primer mes como directivo": mi-cargo/primer-mes.md
+      - "Presidente de Rama": mi-cargo/presidente-rama.md
+      - "Presidente de Capítulo": mi-cargo/presidente-capitulo.md
+      - "Presidente de Grupo de Afinidad": mi-cargo/presidente-grupo-afinidad.md
+      - "Vicepresidente": mi-cargo/vicepresidente.md
+      - "Secretario": mi-cargo/secretario.md
+      - "Tesorero": mi-cargo/tesorero.md
+      - "Consejero de Rama": mi-cargo/consejero.md
+  - "Operar la Rama":
+      - operar/index.md
+      - "Requisitos de una Rama": operar/requisitos.md
+      - "Reportes y fechas límite": operar/reportes.md
+      - "Junta directiva y funciones": operar/junta-directiva.md
+      - "Elecciones y transición de la junta": operar/elecciones-y-transicion.md
+  - "Eventos":
+      - eventos/index.md
+      - "Organizar un evento": eventos/organizar-evento.md
+      - "Reportar un evento en vTools": eventos/reportar-evento.md
+      - "Conseguir ponentes": eventos/conseguir-ponentes.md
+  - "Dinero":
+      - dinero/index.md
+      - "Rebate: cómo se calcula y cómo cobrarlo": dinero/rebate.md
+      - "Otras fuentes de financiación": dinero/otras-fuentes.md
+  - "Membresía y captación":
+      - membresia/index.md
+      - "Año de membresía": membresia/anio-de-membresia.md
+      - "Qué buscan los estudiantes": membresia/que-buscan-los-estudiantes.md
+      - "Plan de captación y renovación": membresia/plan-de-captacion.md
+  - "Capítulos y Grupos de Afinidad":
+      - capitulos/index.md
+      - "Cómo crear un Capítulo": capitulos/crear-capitulo.md
+      - "Cómo crear un Grupo de Afinidad": capitulos/crear-grupo-afinidad.md
+  - "Premios y Reconocimientos":
+      - premios/index.md
+      - "Premios del SAC Colombia": premios/premios-sac-colombia.md
+      - "Premios regionales e internacionales": premios/premios-regionales.md
+  - "Aprender más":
+      - aprender/index.md
+      - "Glosario": aprender/glosario.md
+      - "Formación por cargo": aprender/formacion-por-cargo.md
+      - "Catálogo de cursos del CLE": aprender/catalogo-cursos-cle.md
+  - "Ayuda y recursos":
+      - ayuda/index.md
+      - "¿A quién preguntar?": ayuda/contacto.md
+      - "Preguntas frecuentes": ayuda/faq.md
+      - "Herramientas y marca": ayuda/herramientas-y-marca.md
+      - "Enlaces oficiales": ayuda/enlaces.md

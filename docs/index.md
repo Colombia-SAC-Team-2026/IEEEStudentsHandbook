@@ -4,48 +4,36 @@ Información práctica para estudiantes, miembros, directivos y Consejeros de la
 
 <div class="grid cards" markdown>
 
--   **[Quiero unirme a IEEE](conoce-ieee/unirse.md)**
+-   **[Soy nuevo en IEEE](empezar/index.md)**
 
-    Qué es la membresía, cuánto cuesta para estudiantes y cómo saber si tu universidad tiene Rama.
+    Qué es IEEE, cuánto cuesta la membresía para estudiantes, cómo saber si tu universidad tiene Rama y cómo participar.
 
--   **[Soy miembro y quiero participar](conoce-ieee/unirse.md)**
+-   **[Asumí un cargo](mi-cargo/index.md)**
 
-    Cómo sumarte a tu Rama, a un Capítulo o Grupo de Afinidad, y cómo ser voluntario.
+    Tu primer mes y el checklist de cada cargo: presidentes, vicepresidente, secretario, tesorero y Consejero de Rama.
 
--   **[Soy de un Capítulo o Grupo de Afinidad](operacion/capitulos.md)**
+-   **[Quiero organizar un evento](eventos/organizar-evento.md)**
 
-    Cargos, dinero, eventos y asesor de los Capítulos (Student Branch Chapters) y Grupos de Afinidad.
+    Planear, financiar, promocionar y reportar un evento, con un checklist.
 
--   **[Soy profesor (Consejero)](cargos/consejero.md)**
+-   **[Necesito el rebate o fondos](dinero/index.md)**
 
-    Qué se espera del Consejero de Rama (Branch Counselor) y qué puedes supervisar.
+    El rebate anual de la Rama, cómo cobrarlo en Colombia y otras fuentes de financiación.
 
--   **[¿A quién preguntar?](recursos/contacto.md)**
+-   **[Soy de un Capítulo o Grupo de Afinidad](capitulos/index.md)**
 
-    Consejero, equipo SAC (Student Activities Committee) de la Sección Colombia y Región 9.
+    Requisitos, Consejero, dinero, eventos y cómo crear un Capítulo o un Grupo de Afinidad.
 
--   **[¿Qué es IEEE?](conoce-ieee/index.md)**
+-   **[Tengo una duda](ayuda/contacto.md)**
 
-    Cómo funciona IEEE, qué son las Ramas, los Capítulos y los Grupos de Afinidad, y los cursos introductorios.
-
--   **[Soy directivo](cargos/index.md)**
-
-    Qué hace cada cargo, con su checklist recomendado y sus cursos: presidentes, vicepresidente, secretario, tesorero y Consejero de Rama.
-
--   **[Cómo operar una Rama o Capítulo](operacion/index.md)**
-
-    Requisitos, reportes y fechas límite, membresía, Junta directiva, Capítulos, elecciones y transición de la junta.
-
--   **[Recursos útiles](recursos/index.md)**
-
-    Herramientas, financiación, premios, capacitación, cursos del Center for Leadership Excellence (CLE), marca y contactos.
+    A quién preguntar: Consejero, equipo SAC (Student Activities Committee) de la Sección Colombia y Región 9. También hay [preguntas frecuentes](ayuda/faq.md).
 
 </div>
 
 ## Cómo usar esta wiki
 
 - Navega con el menú de la izquierda (en el celular, con el botón ☰). Los títulos de cada sección también abren una página de resumen.
-- Usa el buscador para encontrar un tema en todas las páginas. Las siglas (OU, SAC, RNR, MGA, CLE, vTools) están en el [Glosario](conoce-ieee/glosario.md).
+- Usa el buscador para encontrar un tema en todas las páginas. Las siglas (OU, SAC, RNR, MGA, CLE, vTools) se explican al pasar el cursor sobre ellas y en el [Glosario](aprender/glosario.md).
 - Cada página es un resumen corto que enlaza a la fuente oficial. Si algo no coincide, manda la fuente oficial.
 
 <section id="ramas" hidden markdown="1">
@@ -65,7 +53,7 @@ Pasa el cursor sobre un marcador para ver la Rama y su número de miembros. El c
 
 </details>
 
-Miembros: [IEEE vTools](https://vtools.ieee.org/), corte del 8 de noviembre de 2026. Límites por departamento: [geoBoundaries](https://www.geoboundaries.org/) (OpenStreetMap, ODbL). Calles al acercar el mapa: © [OpenStreetMap](https://www.openstreetmap.org/copyright). Las zonas están en [¿A quién preguntar?](recursos/contacto.md). Las ubicaciones de las Ramas son aproximadas.
+Miembros: [IEEE vTools](https://vtools.ieee.org/), corte del 8 de noviembre de 2026. Límites por departamento: [geoBoundaries](https://www.geoboundaries.org/) (OpenStreetMap, ODbL). Calles al acercar el mapa: © [OpenStreetMap](https://www.openstreetmap.org/copyright). Las zonas están en [IEEE en Colombia](empezar/ieee-colombia.md#zonas). Las ubicaciones de las Ramas son aproximadas.
 { .sources }
 
 </section>

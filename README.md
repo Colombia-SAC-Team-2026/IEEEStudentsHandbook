@@ -1,6 +1,6 @@
 # IEEE Students Handbook
 
-Spanish-language wiki for officers of IEEE Student Branches, Student Branch Chapters and Affinity Groups in the IEEE Colombia Section.
+Spanish-language wiki for students, members and officers of IEEE Student Branches, Student Branch Chapters and Affinity Groups in the IEEE Colombia Section.
 
 **Live site:** https://colombia-sac-team-2026.github.io/IEEEStudentsHandbook/
 
@@ -28,9 +28,11 @@ Abre http://127.0.0.1:8000. Antes de publicar, `.venv/bin/mkdocs build --strict`
 ## Structure
 
 - `mkdocs.yml`: site configuration and navigation (`nav:`).
-- `docs/`: one Markdown file per page, one folder per section.
+- `docs/`: one Markdown file per page, one folder per section (`empezar`, `mi-cargo`, `operar`, `eventos`, `dinero`, `membresia`, `capitulos`, `premios`, `aprender`, `ayuda`).
+- `includes/abbreviations.md`: acronyms shown as tooltips on every page.
 - `docs/javascripts/`, `docs/stylesheets/`: checklist persistence, branch map and styles.
 - `PREGUNTAS.md`: open questions for the SAC team that the content still depends on.
+- `VALIDACION.md`: card sorting and tree testing plan for the navigation.
 
 ## Deploy
 
